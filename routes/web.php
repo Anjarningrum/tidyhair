@@ -57,6 +57,31 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
 
 Route::group(['middleware' => ['role:adminbranch']], function (){
     Route::get('adminbranch', [App\Http\Controllers\adminbranch\HomeController::class, 'index'])->name('adminbranch.index');
+
+    Route::get('adminbranch/profile', [App\Http\Controllers\adminbranch\ProfileController::class, 'getprofile'])->name('adminbranch.profile');
+    Route::get('adminbranch/editprofile', [App\Http\Controllers\adminbranch\ProfileController::class, 'edit'])->name('adminbranch.profile.edit');
+    Route::post('adminbranch/editprofile/{id}', [App\Http\Controllers\adminbranch\ProfileController::class, 'update'])->name('adminbranch.profile.update');
+    
+    Route::get('adminbranch/barber', [App\Http\Controllers\adminbranch\BarberController::class, 'getbarber'])->name('adminbranch.barber');
+    Route::get('adminbranch/editbarber/{id}', [App\Http\Controllers\adminbranch\BarberController::class, 'edit'])->name('adminbranch.editbarber');
+    Route::post('adminbranch/editbarber/{id}', [App\Http\Controllers\adminbranch\BarberController::class, 'update'])->name('adminbranch.barber.update');
+    Route::get('adminbranch/barber/delete/{id}', [App\Http\Controllers\adminbranch\BarberController::class, 'delete'])->name('adminbranch.barber.delete');
+    Route::get('adminbranch/barber/add', [App\Http\Controllers\adminbranch\BarberController::class, 'add'])->name('adminbranch.barber.add');
+    Route::post('adminbranch/barber/add', [App\Http\Controllers\adminbranch\BarberController::class, 'save'])->name('adminbranch.barber.save');
+
+    Route::get('adminbranch/customer', [App\Http\Controllers\adminbranch\CustomerController::class, 'getcustomer'])->name('adminbranch.customer');
+    Route::get('adminbranch/editcustomer/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'edit'])->name('adminbranch.editcustomer');
+    Route::post('adminbranch/editcustomer/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'update'])->name('adminbranch.customer.update');
+    Route::get('adminbranch/customer/delete/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'delete'])->name('adminbranch.customer.delete');
+    Route::get('adminbranch/customer/add', [App\Http\Controllers\adminbranch\CustomerController::class, 'add'])->name('adminbranch.customer.add');
+    Route::post('adminbranch/customer/add', [App\Http\Controllers\adminbranch\CustomerController::class, 'save'])->name('adminbranch.customer.save');
+
+    Route::get('adminbranch/artikel', [App\Http\Controllers\adminbranch\ArtikelController::class, 'getartikel'])->name('adminbranch.artikel');
+    Route::get('adminbranch/editartikel/{id}', [App\Http\Controllers\adminbranch\ArtikelController::class, 'edit'])->name('adminbranch.editartikel');
+    Route::post('adminbranch/editartikel/{id}', [App\Http\Controllers\adminbranch\ArtikelController::class, 'update'])->name('adminbranch.artikel.update');
+    Route::get('adminbranch/artikel/delete/{id}', [App\Http\Controllers\adminbranch\ArtikelController::class, 'delete'])->name('adminbranch.artikel.delete');
+    Route::get('adminbranch/artikel/add', [App\Http\Controllers\adminbranch\ArtikelController::class, 'add'])->name('adminbranch.artikel.add');
+    Route::post('adminbranch/artikel/add', [App\Http\Controllers\adminbranch\ArtikelController::class, 'save'])->name('adminbranch.artikel.save');
 });
 
 

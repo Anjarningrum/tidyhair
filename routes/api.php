@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['middleware' => ['role:barber']], function (){
+
+});
+
+Route::group(['middleware' => ['role:customer']], function (){
+
+});
