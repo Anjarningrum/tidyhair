@@ -10,7 +10,9 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <style>
         body {
-            background: url("{{asset('images/background.png')}}") no-repeat center center fixed;
+            /*background: url("{{asset('images/background.png')}}") no-repeat center center fixed;
+            */
+            background-color:white;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             background-size: cover;
@@ -57,10 +59,11 @@
         .login{
             display: inline;
             width: 100%;
-            background: white;
+            background: #0B3F68;
             padding: 7px;
             border: 0px;
             font-size: 10px;
+            color: white;
         }
         .login:hover{
             background: #e2e2e2;
@@ -78,7 +81,7 @@
 <body>
     <div class="container-fluid my-5">
         <div class="row justify-content-start">
-            <div class="col-xs-12 col-md-2"></div>
+            <div class="col-xs-4 col-md-4"></div>
             <div class="col-xs-4 col-md-4 my-4">
                 <div class="row mx-2">
                     <img src="{{asset('images/banner-login.png')}}" class="image-fluid p-0">
@@ -88,7 +91,7 @@
                         <form method="POST" action="{{ route('login') }}">
                         @csrf
                             <div>
-                                <input id="email" type="email" class="mail-field @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="username">
+                                <input id="email" type="email" class="mail-field @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -96,7 +99,7 @@
                                 @enderror
                             </div>
                             <div>     
-                                <input id="password" type="password" class="pass-field @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="password">
+                                <input id="password" type="password" class="pass-field @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Kata Sandi">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -105,12 +108,12 @@
                             </div>
                         <div class="login-wrapper">
                             <button type="submit" class="login">
-                                {{ __('Login') }}
+                                {{ __('Masuk') }}
                             </button>
                             <div class="forgot-link">
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">
-                                        {{ __('Forgot Password?') }}
+                                        {{ __('Lupa Kata Sandi?') }}
                                     </a>
                                 @endif
                             </div>
@@ -119,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6"></div>
+            <div class="col-4"></div>
         </div>
     </div>
 </body>

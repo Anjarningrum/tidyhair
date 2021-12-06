@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-    
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     
     <title>Dashboard</title>
     <style>
@@ -15,7 +16,7 @@
             list-style: none;
         }
         body {
-            padding: 0px 1px 0px 1px;
+            padding: 0px 0px 0px 0px;
         }
         #header img{
             height: 50%;
@@ -33,17 +34,16 @@
         }
     </style>
 </head>
-<body class="container-fluid mx-0 px-1">
+<body class="container-fluid mx-0 px-0">
     <div class="vh-100">
     <div class="container-fluid py-1" style="height: 100%;">
         <div class="row" style="height: 100%;">
-            <div class="col-xs-12 col-md-3 py-0 px-0 border" style="background-color: #9C9C9C;">
+            <div class="col-md-3 py-0 px-0 mx-1 border" style="background-color: #0B3F68;">
                 <div>
                     <img src="{{asset('images/adminpusat/header.png')}}" class="img-fluid" >
                 </div>
-                <div>
                     <img src="{{asset('images/adminpusat/WelcomAdminPusat.png')}}" class="img-fluid" style="margin: 5px 0px 5px 0px;">
-                    <div class="container" style="height: 100%;margin: 15px 0px 5px 0px;padding: 0px;">
+                    <div class="container" style="margin: 15px 0px 5px 0px;padding: 0px;">
                         <nav class="position-sticky">
                             <ul style="padding: 0px 0px 0px 11px;">
                                 <li class="nav-item">
@@ -70,6 +70,9 @@
                                     </div>
                                     </a>
                                 </li>
+                                
+                                
+
                                 <li class="nav-item dropdown">
                                     <div class="row">
                                         <div class="col-12">
@@ -149,29 +152,41 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li class="nav-item my-5">
-                                    <a class="nav-link" aria-current="page" href="{{ route('logout') }}" style="font-family: nunito;color: black;"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#" style="font-family: nunito;color: #FFFFFF;">
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <img src="{{asset('images/adminpusat/IconFeedback.png')}}" class="icn">
+                                            </div>
+                                            <div class="col-10 px-0">
+                                                Feedback   
+                                            </div>
+                                        </div>
                                     </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
                                 </li>
                             </ul>
-                        </nav>
-                    </div>
-                </div>
+                        </nav>            
+                    </div> 
+                    <div class="float-none" style="background-color: #154F80;margin-top:47%;">
+                        <a aria-current="page" href="{{ route('logout') }}" style="font-family: nunito;color: white;text-decoration:none;"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>             
             </div>
-            <div class="col-xs-12 col-md-9 border" style="background-color: #FFFFFF;">
+            <div class="col-md p-0 border" style="background-color: #FFFFFF;">
               @yield('content')
             </div>
             
         </div>
     </div>
     </div>
+    
 </body>
 </html>
 
