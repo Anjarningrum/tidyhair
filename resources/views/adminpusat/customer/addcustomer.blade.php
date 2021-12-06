@@ -63,7 +63,7 @@
             <label for="no_telepon" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('No Telepon :') }}</label>
 
             <div class="col-md-6">
-                <input id="no_telepon" type="no_telepon" class="form-control px-0 py-1 my-2 @error('no_telepon') is-invalid @enderror" name="no_telepon" >
+                <input id="no_telepon" type="text" class="form-control px-0 py-1 my-2 @error('no_telepon') is-invalid @enderror" name="no_telepon" required autocomplete="no_telepon">
 
                 @error('no_telepon')
                     <span class="invalid-feedback" role="alert">
@@ -77,7 +77,7 @@
             <label for="alamat" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Alamat :') }}</label>
 
             <div class="col-md-6">
-                <input id="alamat" type="alamat" class="form-control px-0 py-1 my-2 @error('alamat') is-invalid @enderror" name="alamat">
+                <input id="alamat" type="text" class="form-control px-0 py-1 my-2 @error('alamat') is-invalid @enderror" name="alamat" required autocomplete="alamat">
 
                 @error('alamat')
                     <span class="invalid-feedback" role="alert">

@@ -16,4 +16,8 @@ class Artikel extends Model
         'slug',
         'image',
     ];
+
+    function user(){
+        $this->belongsTo(User::class, 'admin_id');
+    }
 }

@@ -22,6 +22,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'no_telepon',
+        'alamat',
+        'photo',
+        'id_branch'
     ];
     //protected $guard_name = 'api';
     /**
@@ -49,5 +53,13 @@ class User extends Authenticatable
 
     public function jasas(){
         return $this->belongsToMany(Jasa::class, 'jasa_user', 'user_id', 'jasa_id');
+    }
+
+    public function hairstyle(){
+        return $this->hasMany(Hairstyle::class);
+    }
+
+    public function artikel(){
+        return $this->hasMany(Artikel::class);
     }
 }

@@ -1,19 +1,19 @@
 @extends('adminpusat.app')
 @section('content')
 <div class="col-md-12 ms-sm-auto col-lg-12">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 ">Branch</h1>
+      <div class="text-center mb-5 mt-2">
+        <h1 class="h2 ">Barber</h1>
         
       </div>
 </div>
 <div class="col-md-12 ms-sm-auto col-lg-12">
 <div class="row">
-    <div class="col-12 grid-margin">
+    <div class="col grid-margin">
     <div class="card">
         <div class="card-body">
         <div class="row mb-3">
             <div class="col-10">
-            <h4 class="card-title">Data Branch</h4>
+            <h4 class="card-title">Data Barber</h4>
             </div>
             <div class="col-2 text-right">
             <a href="{{ route('adminpusat.barber.add') }}" class="btn btn-primary">Tambah</a>

@@ -95,7 +95,7 @@
             <label for="alamat" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Alamat :') }}</label>
 
             <div class="col-md-6">
-                <input id="alamat" type="alamat" class="form-control px-0 py-1 my-2 @error('alamat') is-invalid @enderror" name="alamat">
+                <input id="alamat" type="alamat" class="form-control px-0 py-1 my-2 @error('alamat') is-invalid @enderror" name="alamat" value="{{ $user->alamat }}">
 
                 @error('alamat')
                     <span class="invalid-feedback" role="alert">

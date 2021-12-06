@@ -15,11 +15,14 @@ class CreateHairstylesTable extends Migration
     {
         Schema::create('hairstyles', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('admin_id');
             $table->string('nama');
             $table->string('deskripsi');
             $table->string('image')->nullable();
             $table->enum('status', ['active', 'inactive']);
             $table->timestamps();
+        
+            $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

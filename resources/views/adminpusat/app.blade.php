@@ -84,7 +84,7 @@
                                                 <li><a class="dropdown-item" href="{{ route('adminpusat.branch') }}">Branch</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('adminpusat.barber') }}">Barber</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('adminpusat.customer') }}">Customer</a></li>
-                                                <li><a class="dropdown-item" href="#">Hair Style</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('adminpusat.hairstyle') }}">Hair Style</a></li>
                                                 <li><a class="dropdown-item" href="#">Payment</a></li>
                                             </ul>
                                         </div>
@@ -179,10 +179,9 @@
                         </form>
                     </div>             
             </div>
-            <div class="col-md p-0 border" style="background-color: #FFFFFF;">
+            <div class="col-md py-0 px-0 mx-1 border">
               @yield('content')
             </div>
-            
         </div>
     </div>
     </div>

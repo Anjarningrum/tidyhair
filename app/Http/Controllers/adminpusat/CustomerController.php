@@ -27,9 +27,9 @@ class CustomerController extends Controller
 
         $user->name = $req->name;
         $user->email = $req->email;
-        $user->password = Hash::make($req->password);
         $user->alamat = $req->alamat;
         $user->no_telepon = $req->no_telepon;
+        $user->password = Hash::make($req->password);
 
         $user->save();
 
@@ -47,13 +47,19 @@ class CustomerController extends Controller
     }
 
     public function save(Request $req){
-
+        
+        $req->validate([
+            'password' => 'required|min:6|confirmed',
+            'no_telepon' => 'required|digits_between:9,11',
+            'alamat' => 'required'
+        ]);
+        
         $user = User::create([
             'name' => $req->name,
             'email' => $req->email,
-            'password' => Hash::make($req->password),
             'no_telepon' => $req->no_telepon,
             'alamat' => $req->alamat,
+            'password' => Hash::make($req->password),
         ]);
         $user->assignRole('customer');
         return redirect()->route('adminpusat.customer');

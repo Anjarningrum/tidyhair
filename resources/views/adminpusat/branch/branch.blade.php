@@ -1,14 +1,14 @@
 @extends('adminpusat.app')
 @section('content')
 <div class="col-md-12 ms-sm-auto col-lg-12">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div class="text-center mb-5 mt-2">
         <h1 class="h2 ">Branch</h1>
         
       </div>
 </div>
 <div class="col-md-12 ms-sm-auto col-lg-12">
 <div class="row">
-    <div class="col-12 grid-margin">
+    <div class="col grid-margin">
     <div class="card">
         <div class="card-body">
         <div class="row mb-3">

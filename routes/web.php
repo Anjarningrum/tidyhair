@@ -46,6 +46,13 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat/customer/add', [App\Http\Controllers\adminpusat\CustomerController::class, 'add'])->name('adminpusat.customer.add');
     Route::post('adminpusat/customer/add', [App\Http\Controllers\adminpusat\CustomerController::class, 'save'])->name('adminpusat.customer.save');
 
+    Route::get('adminpusat/hairstyle', [App\Http\Controllers\adminpusat\HairstyleController::class, 'gethairstyle'])->name('adminpusat.hairstyle');
+    Route::get('adminpusat/edithairstyle/{id}', [App\Http\Controllers\adminpusat\HairstyleController::class, 'edit'])->name('adminpusat.edithairstyle');
+    Route::post('adminpusat/edithairstyle/{id}', [App\Http\Controllers\adminpusat\HairstyleController::class, 'update'])->name('adminpusat.hairstyle.update');
+    Route::get('adminpusat/hairstyle/delete/{id}', [App\Http\Controllers\adminpusat\HairstyleController::class, 'delete'])->name('adminpusat.hairstyle.delete');
+    Route::get('adminpusat/hairstyle/add', [App\Http\Controllers\adminpusat\HairstyleController::class, 'add'])->name('adminpusat.hairstyle.add');
+    Route::post('adminpusat/hairstyle/add', [App\Http\Controllers\adminpusat\HairstyleController::class, 'save'])->name('adminpusat.hairstyle.save');
+
     Route::get('adminpusat/artikel', [App\Http\Controllers\adminpusat\ArtikelController::class, 'getartikel'])->name('adminpusat.artikel');
     Route::get('adminpusat/editartikel/{id}', [App\Http\Controllers\adminpusat\ArtikelController::class, 'edit'])->name('adminpusat.editartikel');
     Route::post('adminpusat/editartikel/{id}', [App\Http\Controllers\adminpusat\ArtikelController::class, 'update'])->name('adminpusat.artikel.update');
