@@ -58,6 +58,7 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::post('adminpusat/editartikel/{id}', [App\Http\Controllers\adminpusat\ArtikelController::class, 'update'])->name('adminpusat.artikel.update');
     Route::get('adminpusat/artikel/delete/{id}', [App\Http\Controllers\adminpusat\ArtikelController::class, 'delete'])->name('adminpusat.artikel.delete');
     Route::get('adminpusat/artikel/add', [App\Http\Controllers\adminpusat\ArtikelController::class, 'add'])->name('adminpusat.artikel.add');
+    Route::post('adminpusat/artikel/upload', [App\Http\Controllers\adminpusat\ArtikelController::class, 'uploadphoto'])->name('adminpusat.artikel.uploadphoto');
     Route::post('adminpusat/artikel/add', [App\Http\Controllers\adminpusat\ArtikelController::class, 'save'])->name('adminpusat.artikel.save');
 });
 
