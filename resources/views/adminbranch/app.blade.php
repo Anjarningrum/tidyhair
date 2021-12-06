@@ -42,7 +42,7 @@
                 <div>
                     <img src="{{asset('images/adminpusat/header.png')}}" class="img-fluid" >
                 </div>
-                    <img src="{{asset('images/adminpusat/WelcomAdminPusat.png')}}" class="img-fluid" style="margin: 5px 0px 5px 0px;">
+                    <img src="{{asset('images/adminbranch/WelcomAdminBranch.png')}}" class="img-fluid" style="margin: 5px 0px 5px 0px;">
                     <div class="container" style="margin: 15px 0px 5px 0px;padding: 0px;">
                         <nav class="position-sticky">
                             <ul style="padding: 0px 0px 0px 11px;">
@@ -96,7 +96,7 @@
                                                 Product 
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="{{ route('adminpusat.barang') }}">Barang</a></li>
+                                                <li><a class="dropdown-item" href="#">Barang</a></li>
                                                 <li><a class="dropdown-item" href="#">Jasa</a></li>
                                             </ul>
                                         </div>

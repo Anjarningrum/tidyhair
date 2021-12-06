@@ -33,7 +33,7 @@
             border: 0.5px black solid;
             background: transparent;
             margin: 21px 5px 5px 5px;
-            padding: 5px 5px 5px 30px;
+            padding: 5px 5px 5px 40px;
             font-size: 10px;
             width: 86%;
         }
@@ -47,7 +47,7 @@
             border: 0.5px black solid;
             background: transparent;
             margin: 5px 5px 21px 5px;
-            padding: 5px 5px 5px 30px;
+            padding: 5px 5px 5px 40px;
             font-size: 10px;
             width: 86%;
         }
@@ -86,7 +86,7 @@
                 <div class="row mx-2">
                     <img src="{{asset('images/banner-login.png')}}" class="image-fluid p-0">
                 </div>
-                <div class="row mx-2" style="background-color: #EDECEC;opacity: 0.9;">
+                <div class="row mx-2">
                     <div class="form-login">
                         <form method="POST" action="{{ route('login') }}">
                         @csrf

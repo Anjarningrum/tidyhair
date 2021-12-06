@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   /*
         $admin = User::create([
             'name' => 'adminpusat',
             'email' => 'adminpusat@mail.com',
@@ -45,5 +45,13 @@ class UserSeeder extends Seeder
         ]);
 
         $userdua->assignRole('customer');
+        */
+        $admin = User::create([
+            'name' => 'adminbranch',
+            'email' => 'adminbranch@mail.com',
+            'password' => bcrypt('12345678'),
+        ]);
+
+        $admin->assignRole('adminbranch');
     }
 }

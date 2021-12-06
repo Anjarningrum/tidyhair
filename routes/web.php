@@ -58,8 +58,14 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::post('adminpusat/editartikel/{id}', [App\Http\Controllers\adminpusat\ArtikelController::class, 'update'])->name('adminpusat.artikel.update');
     Route::get('adminpusat/artikel/delete/{id}', [App\Http\Controllers\adminpusat\ArtikelController::class, 'delete'])->name('adminpusat.artikel.delete');
     Route::get('adminpusat/artikel/add', [App\Http\Controllers\adminpusat\ArtikelController::class, 'add'])->name('adminpusat.artikel.add');
-    Route::post('adminpusat/artikel/upload', [App\Http\Controllers\adminpusat\ArtikelController::class, 'uploadphoto'])->name('adminpusat.artikel.uploadphoto');
     Route::post('adminpusat/artikel/add', [App\Http\Controllers\adminpusat\ArtikelController::class, 'save'])->name('adminpusat.artikel.save');
+
+    Route::get('adminpusat/barang', [App\Http\Controllers\adminpusat\BarangController::class, 'getbarang'])->name('adminpusat.barang');
+    Route::get('adminpusat/editbarang/{id}', [App\Http\Controllers\adminpusat\BarangController::class, 'edit'])->name('adminpusat.editbarang');
+    Route::post('adminpusat/editbarang/{id}', [App\Http\Controllers\adminpusat\BarangController::class, 'update'])->name('adminpusat.barang.update');
+    Route::get('adminpusat/barang/delete/{id}', [App\Http\Controllers\adminpusat\BarangController::class, 'delete'])->name('adminpusat.barang.delete');
+    Route::get('adminpusat/barang/add', [App\Http\Controllers\adminpusat\BarangController::class, 'add'])->name('adminpusat.barang.add');
+    Route::post('adminpusat/barang/add', [App\Http\Controllers\adminpusat\BarangController::class, 'save'])->name('adminpusat.barang.save');
 });
 
 
