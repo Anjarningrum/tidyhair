@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row mb-3">
             <label for="image" class="col-md-2 col-form-label text-md-right data py-0 my-2">{{ __('Gambar :') }}</label>
 
             <div class="col-md-10">
