@@ -4,37 +4,37 @@ namespace App\Http\Controllers\adminpusat;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Barang;
+use App\Models\Jasa;
 use App\Models\User;
 
-class BarangController extends Controller
+class JasaController extends Controller
 {
-    public function getbarang(){
-        $barang = User::find(Auth::user()->id)->barangs;
-        return view('adminpusat.barang.barang', compact('barang'));
+    public function getjasa(){
+        $jasa = User::find(Auth::user()->id)->jasas;
+        return view('adminpusat.jasa.jasa', compact('jasa'));
     }
 
     public function edit($id){
-        $barang = Barang::findOrFail($id);
-        return view('adminpusat.barang.editbarang', compact('barang'));
+        $jasa = Jasa::findOrFail($id);
+        return view('adminpusat.jasa.editjasa', compact('jasa'));
     }
 
     public function update($id, Request $req){
-        $barang = Barang::findOrFail($id);
+        $jasa = Jasa::findOrFail($id);
 
-        $barang->save();
+        $jasa->save();
 
-        return redirect()->route('adminpusat.barang');
+        return redirect()->route('adminpusat.jasa');
 
     }
 
     public function delete($id){
-        Barang::destroy($id);
-        return redirect()->route('adminpusat.barang')->with('status','Berhasil Mengahapus Hair Style');
+        Jasa::destroy($id);
+        return redirect()->route('adminpusat.jasa')->with('status','Berhasil Mengahapus Hair Style');
     }
 
     public function add(){
-        return view('adminpusat.barang.addbarang');
+        return view('adminpusat.jasa.addjasa');
     }
 
     public function save(Request $request){

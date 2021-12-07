@@ -66,6 +66,14 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat/barang/delete/{id}', [App\Http\Controllers\adminpusat\BarangController::class, 'delete'])->name('adminpusat.barang.delete');
     Route::get('adminpusat/barang/add', [App\Http\Controllers\adminpusat\BarangController::class, 'add'])->name('adminpusat.barang.add');
     Route::post('adminpusat/barang/add', [App\Http\Controllers\adminpusat\BarangController::class, 'save'])->name('adminpusat.barang.save');
+
+    Route::get('adminpusat/jasa', [App\Http\Controllers\adminpusat\JasaController::class, 'getjasa'])->name('adminpusat.jasa');
+    Route::get('adminpusat/editjasa/{id}', [App\Http\Controllers\adminpusat\JasaController::class, 'edit'])->name('adminpusat.editjasa');
+    Route::post('adminpusat/editjasa/{id}', [App\Http\Controllers\adminpusat\JasaController::class, 'update'])->name('adminpusat.jasa.update');
+    Route::get('adminpusat/jasa/delete/{id}', [App\Http\Controllers\adminpusat\JasaController::class, 'delete'])->name('adminpusat.jasa.delete');
+    Route::get('adminpusat/jasa/add', [App\Http\Controllers\adminpusat\JasaController::class, 'add'])->name('adminpusat.jasa.add');
+    Route::post('adminpusat/jasa/add', [App\Http\Controllers\adminpusat\JasaController::class, 'save'])->name('adminpusat.jasa.save');
+
 });
 
 

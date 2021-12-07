@@ -97,7 +97,7 @@
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                 <li><a class="dropdown-item" href="{{ route('adminpusat.barang') }}">Barang</a></li>
-                                                <li><a class="dropdown-item" href="#">Jasa</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
                                             </ul>
                                         </div>
                                     </div>

@@ -16,7 +16,7 @@
             <h4 class="card-title">Data Barang</h4>
             </div>
             <div class="col-2 text-right">
-            <a href="{{ route('adminpusat.barang.add') }}" class="btn btn-primary">Tambah</a>
+            <a href="{{ route('adminpusat.jasa.add') }}" class="btn btn-primary">Tambah</a>
             </div>
         </div>
         <div class="row mb-3 table-responsive">
@@ -33,20 +33,19 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($barang as $b)
+                @foreach($jasa as $j)
                 <tr>
-                    <td align="center">{{ $b->id }}</td>
-                    <td>{{ $b->nama }}</td>
-                    <td>{{ $b->harga }}</td>
-                    <td>{{ $b->stok }}</td>
-                    <td>{{ $b->diskon }} %</td>
-                    <td><img src="{{ asset('storage/'.$b->image) }}" alt="" class="img-fluid img-thumbnail" width="150" ></td>
+                    <td align="center">{{ $j->id }}</td>
+                    <td>{{ $j->nama }}</td>
+                    <td>{{ $j->harga }}</td>
+                    <td>{{ $j->diskon }} %</td>
+                    <td><img src="{{ asset('storage/'.$j->image) }}" alt="" class="img-fluid img-thumbnail" width="150" ></td>
                     <td align="center">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('adminpusat.editbarang', ['id'=>$b->id]) }}" class="btn btn-warning btn-sm">
+                        <a href="{{ route('adminpusat.editjasa', ['id'=>$j->id]) }}" class="btn btn-warning btn-sm">
                             <i class="fa fa-edit fa-sm"></i>
                         </a>
-                        <a href="{{ route('adminpusat.barang.delete', ['id'=>$b->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                        <a href="{{ route('adminpusat.jasa.delete', ['id'=>$j->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
                             <i class="fa fa-trash-o fa-sm"></i>
                         </a>
                     </div>
