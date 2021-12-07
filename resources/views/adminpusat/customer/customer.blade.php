@@ -33,20 +33,20 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($user as $u)
+                @foreach($cus as $c)
                 <tr>
-                    <td align="center">{{ $u->id }}</td>
-                    <td>{{ $u->name }}</td>
-                    <td>{{ $u->email }}</td>
-                    <td>{{ $u->alamat }}</td>
-                    <td>{{ $u->no_telepon }}</td>
-                    <td><img src="" alt="" class="img-fluid img-thumbnail" ></td>
+                    <td align="center">{{ $c->id }}</td>
+                    <td>{{ $c->name }}</td>
+                    <td>{{ $c->email }}</td>
+                    <td>{{ $c->alamat }}</td>
+                    <td>{{ $c->no_telepon }}</td>
+                    <td><img src="{{ asset('storage/'.$c->photo) }}" width="150" alt="" class="img-fluid img-thumbnail" ></td>
                     <td align="center">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('adminpusat.editcustomer', ['id'=>$u->id]) }}" class="btn btn-warning btn-sm">
+                        <a href="{{ route('adminpusat.editcustomer', ['id'=>$c->id]) }}" class="btn btn-warning btn-sm">
                             <i class="fa fa-edit fa-sm"></i>
                         </a>
-                        <a href="{{ route('adminpusat.customer.delete', ['id'=>$u->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                        <a href="{{ route('adminpusat.customer.delete', ['id'=>$c->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
                             <i class="fa fa-trash-o fa-sm"></i>
                         </a>
                     </div>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -14,21 +15,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {   
-        $admin = User::create([
-            'name' => 'adminbranchdua',
-            'email' => 'adminbranchdua@mail.com',
+        $admin = Customer::create([
+            'name' => 'cus1',
+            'email' => 'cus1@mail.com',
             'password' => bcrypt('12345678'),
         ]);
 
-        $admin->assignRole('adminbranch');
-
-        $admin = User::create([
-            'name' => 'adminbranchtiga',
-            'email' => 'adminbranchtiga@mail.com',
+        $admin = Customer::create([
+            'name' => 'cus2',
+            'email' => 'cus2@mail.com',
             'password' => bcrypt('12345678'),
         ]);
-
-        $admin->assignRole('adminbranch');
         /*
         $admin = User::create([
             'name' => 'adminpusat',

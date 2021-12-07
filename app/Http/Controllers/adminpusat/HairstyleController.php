@@ -21,9 +21,19 @@ class HairstyleController extends Controller
     public function update($id, Request $req){
         $hair = Hairstyle::findOrFail($id);
 
-        $hair->save();
+        if($req->file('image')){
+            Storage::delete('public/'.$cus->photo);
+            $file = $req->file('image')->store('imagehairstyle', 'public');
+            $hair->image = $file;
+        }
+            $hair->admin_id = $req->admin_id;
+            $hair->nama = $req->name;
+            $hair->deskripsi = $req->deskripsi;
+            $hair->status = $req->status;
+            
+            $hair->save();
 
-        return redirect()->route('adminpusat.hairstyle');
+            return redirect()->route('adminpusat.hairstyle');
 
     }
 

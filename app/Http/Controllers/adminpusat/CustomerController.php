@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\adminpusat;
 
-use App\Models\User;
+use App\Models\Customer;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Auth;
@@ -13,32 +14,36 @@ use Illuminate\Http\Request;
 class CustomerController extends Controller
 {
     public function getcustomer(){
-        $user = User::role('customer')->get();
-        return view('adminpusat.customer.customer', compact('user'));
+        $cus = Customer::all();
+        return view('adminpusat.customer.customer', compact('cus'));
     }
 
     public function edit($id){
-        $user = User::findOrFail($id);
-        return view('adminpusat.customer.editcustomer', compact('user'));
+        $cus = Customer::findOrFail($id);
+        return view('adminpusat.customer.editcustomer', compact('cus'));
     }
 
     public function update($id, Request $req){
-        $user = User::findOrFail($id);
+        $cus = Customer::findOrFail($id);
 
-        $user->name = $req->name;
-        $user->email = $req->email;
-        $user->alamat = $req->alamat;
-        $user->no_telepon = $req->no_telepon;
-        $user->password = Hash::make($req->password);
+        if($req->file('image')){
+            Storage::delete('public/'.$cus->photo);
+            $file = $req->file('image')->store('imagecustomer', 'public');
+            $cus->photo = $file;
+        }
+            $cus->name = $req->name;
+            $cus->email = $req->email;
+            $cus->password = Hash::make($req->password);
+            $cus->alamat = $req->alamat;
+            $cus->no_telepon = $req->no_telepon;
+            
+            $cus->save();
 
-        $user->save();
-
-        return redirect()->route('adminpusat.customer');
-
+            return redirect()->route('adminpusat.customer');
     }
 
     public function delete($id){
-        User::destroy($id);
+        Customer::destroy($id);
         return redirect()->route('adminpusat.customer')->with('status','Berhasil Mengahapus Produk');
     }
 
@@ -48,20 +53,50 @@ class CustomerController extends Controller
 
     public function save(Request $req){
         
+        if($req->file('image')){
+            
+            $file = $req->file('image')->store('imagecustomer', 'public');
+            
+            $cus = Customer::create([
+                'name' => $req->name,
+                'email' => $req->email,
+                'password' => Hash::make($req->password),
+                'no_telepon' => $req->no_telepon,
+                'alamat' => $req->alamat,
+                'photo' => $file
+            ]);
+            
+            $cus->save();
+
+            return redirect()->route('adminpusat.customer');
+        }else{
+            $cus = Customer::create([
+                'name' => $req->name,
+                'email' => $req->email,
+                'password' => Hash::make($req->password),
+                'no_telepon' => $req->no_telepon,
+                'alamat' => $req->alamat
+            ]);
+            
+            $cus->save();
+
+            return redirect()->route('adminpusat.customer');
+        }
+
         $req->validate([
             'password' => 'required|min:6|confirmed',
             'no_telepon' => 'required|digits_between:9,11',
             'alamat' => 'required'
         ]);
         
-        $user = User::create([
+        $cus = Customer::create([
             'name' => $req->name,
             'email' => $req->email,
             'no_telepon' => $req->no_telepon,
             'alamat' => $req->alamat,
             'password' => Hash::make($req->password),
         ]);
-        $user->assignRole('customer');
+        
         return redirect()->route('adminpusat.customer');
     }
 }

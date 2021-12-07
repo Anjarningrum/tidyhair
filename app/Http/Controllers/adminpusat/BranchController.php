@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\adminpusat;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Auth;
@@ -25,15 +26,20 @@ class BranchController extends Controller
     public function update($id, Request $req){
         $user = User::findOrFail($id);
 
-        $user->name = $req->name;
-        $user->email = $req->email;
-        $user->password = Hash::make($req->password);
-        $user->alamat = $req->alamat;
-        $user->no_telepon = $req->no_telepon;
+        if($req->file('image')){
+            Storage::delete('public/'.$user->photo);
+            $file = $req->file('image')->store('imagebranch', 'public');
+            $user->photo = $file;
+        }
+            $user->name = $req->name;
+            $user->email = $req->email;
+            $user->password = Hash::make($req->password);
+            $user->alamat = $req->alamat;
+            $user->no_telepon = $req->no_telepon;
+            
+            $user->save();
 
-        $user->save();
-
-        return redirect()->route('adminpusat.branch');
+            return redirect()->route('adminpusat.branch');
 
     }
 
@@ -48,14 +54,34 @@ class BranchController extends Controller
 
     public function save(Request $req){
 
-        $user = User::create([
-            'name' => $req->name,
-            'email' => $req->email,
-            'password' => Hash::make($req->password),
-            'no_telepon' => $req->no_telepon,
-            'alamat' => $req->alamat,
-        ]);
-        $user->assignRole('adminbranch');
-        return redirect()->route('adminpusat.branch');
+        if($req->file('image')){
+            
+            $file = $req->file('image')->store('imagebarber', 'public');
+            
+            $user = User::create([
+                'name' => $req->name,
+                'email' => $req->email,
+                'password' => Hash::make($req->password),
+                'no_telepon' => $req->no_telepon,
+                'alamat' => $req->alamat,
+                'photo' => $file
+            ]);
+            $user->assignRole('adminbranch');
+            $user->save();
+
+            return redirect()->route('adminpusat.branch');
+        }else{
+            $user = User::create([
+                'name' => $req->name,
+                'email' => $req->email,
+                'password' => Hash::make($req->password),
+                'no_telepon' => $req->no_telepon,
+                'alamat' => $req->alamat
+            ]);
+            $user->assignRole('adminbranch');
+            $user->save();
+
+            return redirect()->route('adminpusat.branch');
+        }
     }
 }

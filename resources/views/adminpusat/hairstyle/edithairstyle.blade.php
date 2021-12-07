@@ -19,6 +19,7 @@
 
     <form method="POST" action="{{ route('adminpusat.hairstyle.update',['id' => $hair->id]) }}">
         @csrf
+        <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}">
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Name :') }}</label>
 

@@ -1,12 +1,12 @@
 @extends('adminpusat.app')
 @section('content')
-<div class="col-md-12 ms-sm-auto col-lg-12">
+<div class="col-md ms-sm-auto col-lg">
       <div class="text-center mb-5 mt-2">
         <h1 class="h2 ">Branch</h1>
         
       </div>
 </div>
-<div class="col-md-12 ms-sm-auto col-lg-12">
+<div class="col-md ms-sm-auto col-lg">
 <div class="row">
     <div class="col grid-margin">
     <div class="card">
@@ -20,14 +20,14 @@
             </div>
         </div>
         <div class="row mb-3 table-responsive">
-            <table class="table table-bordered table-hovered" id="table">
+            <table class="table table-striped table-hover table-condensed" id="table">
             <thead>
                 <tr>
                 <th width="5%">Id</th>
                 <th>Nama Branch</th>
                 <th>Email</th>
                 <th>Alamat</th>
-                <th>No Telepon</th>
+                <th>Telepon</th>
                 <th>Photo</th>
                 <th width="15%">Edit/Hapus</th>
                 </tr>
@@ -40,7 +40,7 @@
                     <td>{{ $u->email }}</td>
                     <td>{{ $u->alamat }}</td>
                     <td>{{ $u->no_telepon }}</td>
-                    <td><img src="" alt="" class="img-fluid img-thumbnail" ></td>
+                    <td><img src="{{ asset('storage/'.$u->photo) }}" width="150" alt="" class="img-fluid img-thumbnail" ></td>
                     <td align="center">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="{{ route('adminpusat.editbranch', ['id'=>$u->id]) }}" class="btn btn-warning btn-sm">

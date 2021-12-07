@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="row mb-3 table-responsive">
-            <table class="table table-bordered table-hovered" id="table">
+            <table class="table table-striped table-hover table-condensed" id="table">
             <thead>
                 <tr>
                 <th width="5%">Id</th>

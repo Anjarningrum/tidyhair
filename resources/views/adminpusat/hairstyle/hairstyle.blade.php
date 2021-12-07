@@ -38,7 +38,7 @@
                     <td>{{ $h->nama }}</td>
                     <td>{{ $h->deskripsi }}</td>
                     <td>{{ $h->status }}</td>
-                    <td><img src="{{ asset('storage/'.$h->image) }}" alt="" class="img-fluid img-thumbnail" ></td>
+                    <td><img src="{{ asset('storage/'.$h->image) }}" width="150" alt="" class="img-fluid img-thumbnail" ></td>
                     <td align="center">
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="{{ route('adminpusat.edithairstyle', ['id'=>$h->id]) }}" class="btn btn-warning btn-sm">
