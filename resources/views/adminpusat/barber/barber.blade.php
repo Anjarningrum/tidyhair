@@ -24,29 +24,31 @@
             <thead>
                 <tr>
                 <th width="5%">Id</th>
-                <th>Nama Branch</th>
+                <th>Nama Barber</th>
                 <th>Email</th>
                 <th>Alamat</th>
                 <th>No Telepon</th>
+                <th>Branch</th>
                 <th>Photo</th>
                 <th width="15%">Edit/Hapus</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($user as $u)
+                @foreach($barber as $b)
                 <tr>
-                    <td align="center">{{ $u->id }}</td>
-                    <td>{{ $u->name }}</td>
-                    <td>{{ $u->email }}</td>
-                    <td>{{ $u->alamat }}</td>
-                    <td>{{ $u->no_telepon }}</td>
-                    <td><img src="" alt="" class="img-fluid img-thumbnail" ></td>
+                    <td align="center">{{ $b->id }}</td>
+                    <td>{{ $b->name }}</td>
+                    <td>{{ $b->email }}</td>
+                    <td>{{ $b->alamat }}</td>
+                    <td>{{ $b->no_telepon }}</td>
+                    <td>{{ $b->user->name }}</td>
+                    <td><img src="{{ asset('storage/'.$b->photo) }}" alt="" class="img-fluid img-thumbnail" ></td>
                     <td align="center">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('adminpusat.editbarber', ['id'=>$u->id]) }}" class="btn btn-warning btn-sm">
+                        <a href="{{ route('adminpusat.editbarber', ['id'=>$b->id]) }}" class="btn btn-warning btn-sm">
                             <i class="fa fa-edit fa-sm"></i>
                         </a>
-                        <a href="{{ route('adminpusat.barber.delete', ['id'=>$u->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
+                        <a href="{{ route('adminpusat.barber.delete', ['id'=>$b->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
                             <i class="fa fa-trash-o fa-sm"></i>
                         </a>
                     </div>

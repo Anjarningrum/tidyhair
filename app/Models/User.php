@@ -62,4 +62,8 @@ class User extends Authenticatable
     public function artikel(){
         return $this->hasMany(Artikel::class);
     }
+
+    public function barbers(){
+        return $this->hasMany(Barber::class);
+    }
 }

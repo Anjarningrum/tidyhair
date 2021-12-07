@@ -23,15 +23,5 @@ class RoleSeeder extends Seeder
             'name' => 'adminbranch',
             'guard_name' => 'web'
         ]);
-
-        Role::create([
-            'name' => 'barber',
-            'guard_name' => 'web'
-        ]);
-
-        Role::create([
-            'name' => 'customer',
-            'guard_name' => 'web'
-        ]);
     }
 }
