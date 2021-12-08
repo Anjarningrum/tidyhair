@@ -57,7 +57,4 @@ class ArtikelController extends Controller
         return redirect()->route('adminpusat.artikel');
     }
 
-    public function uploadphoto(){
-        
-    }
 }

@@ -1,9 +1,36 @@
 @extends('adminpusat.app')
 @section('content')
+<style>
+    .customBtn{
+        text-decoration: none;
+        background: #0B3F68;
+        padding: 3px 18px 3px 18px;
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+    }
+    .customBtnEdit{
+        text-decoration: none;
+        background: #0B3F68;
+        padding: 3px 23px 3px 23px;
+        border-radius: 10px;
+        color: white;
+        margin-top: 11px;
+        font-size: 15px;
+    }
+    .customBtnDelete{
+        text-decoration: none;
+        background: white;
+        padding: 2px 14px 2px 14px;
+        border-radius: 10px;
+        border: 1px solid red;
+        color: red;
+        font-size: 15px;
+    }
+</style>
 <div class="col-md ms-sm-auto col-lg">
       <div class="text-center mb-5 mt-2">
         <h1 class="h2 ">Branch</h1>
-        
       </div>
 </div>
 <div class="col-md ms-sm-auto col-lg">
@@ -12,11 +39,11 @@
     <div class="card">
         <div class="card-body">
         <div class="row mb-3">
-            <div class="col-10">
+            <div class="col-9">
             <h4 class="card-title">Data Branch</h4>
             </div>
-            <div class="col-2 text-right">
-            <a href="{{ route('adminpusat.branch.add') }}" class="btn btn-primary">Tambah</a>
+            <div class="col text-right">
+            <a href="{{ route('adminpusat.branch.add') }}" class="customBtn ms-5">Add</a>
             </div>
         </div>
         <div class="row mb-3 table-responsive">
@@ -42,14 +69,14 @@
                     <td>{{ $u->no_telepon }}</td>
                     <td><img src="{{ asset('storage/'.$u->photo) }}" width="150" alt="" class="img-fluid img-thumbnail" ></td>
                     <td align="center">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('adminpusat.editbranch', ['id'=>$u->id]) }}" class="btn btn-warning btn-sm">
-                            <i class="fa fa-edit fa-sm"></i>
+                        <div style="margin-bottom:5px;">
+                            <a href="{{ route('adminpusat.editbranch', ['id'=>$u->id]) }}" class="customBtnEdit">
+                                Edit
+                            </a>
+                        </div>
+                        <a href="{{ route('adminpusat.branch.delete', ['id'=>$u->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
+                            Delete
                         </a>
-                        <a href="{{ route('adminpusat.branch.delete', ['id'=>$u->id]) }}" onclick="return confirm('Yakin Hapus data')" class="btn btn-danger btn-sm">
-                            <i class="fa fa-trash-o fa-sm"></i>
-                        </a>
-                    </div>
                     </td>
                 </tr>
                 @endforeach

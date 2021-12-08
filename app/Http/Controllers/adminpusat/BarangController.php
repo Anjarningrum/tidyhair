@@ -6,26 +6,42 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class BarangController extends Controller
 {
     public function getbarang(){
-        $barang = User::find(Auth::user()->id)->barangs;
+        $barang = Barang::all();
         return view('adminpusat.barang.barang', compact('barang'));
     }
 
     public function edit($id){
         $barang = Barang::findOrFail($id);
-        return view('adminpusat.barang.editbarang', compact('barang'));
+        $branch = User::role('adminbranch')->get();
+        return view('adminpusat.barang.editbarang', compact('barang', 'branch'));
     }
 
     public function update($id, Request $req){
         $barang = Barang::findOrFail($id);
 
-        $barang->save();
+        if($req->file('image')){
+            Storage::delete('public/'.$barang->photo);
+            $file = $req->file('image')->store('imagebarang', 'public');
+            $barang->image = $file;
+        }
+            $barang->nama = $req->name;
+            $barang->harga = $req->harga;
+            $barang->stok = $req->stok;
+            $barang->diskon = $req->diskon;
+            
+            $barang->users()->detach();
 
-        return redirect()->route('adminpusat.barang');
+            foreach($req->branch as $b){
+                $barang->users()->attach($b);
+            }
+            $barang->save();
 
+            return redirect()->route('adminpusat.barang');
     }
 
     public function delete($id){
@@ -34,7 +50,8 @@ class BarangController extends Controller
     }
 
     public function add(){
-        return view('adminpusat.barang.addbarang');
+        $branch = User::role('adminbranch')->get();
+        return view('adminpusat.barang.addbarang', compact('branch'));
     }
 
     public function save(Request $request){
@@ -49,7 +66,10 @@ class BarangController extends Controller
                 'diskon' => $request->diskon,
                 'image' => $file
             ]);
-            $barang->users()->attach(Auth::user()->id);
+            foreach($request->branch as $b){
+                $barang->users()->attach($b);
+            }
+            
 
             return redirect()->route('adminpusat.barang')->with('status','Berhasil Menambah Produk Baru');
         }

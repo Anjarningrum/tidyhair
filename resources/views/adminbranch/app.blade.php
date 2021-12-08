@@ -47,7 +47,7 @@
                         <nav class="position-sticky">
                             <ul style="padding: 0px 0px 0px 11px;">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ route('adminpusat.index') }}" style="font-family: nunito;color: #FFFFFF;">
+                                    <a class="nav-link active" aria-current="page" href="{{ route('adminbranch.index') }}" style="font-family: nunito;color: #FFFFFF;">
                                     <div class="row h-100">
                                         <div class="col-2">
                                             <img src="{{asset('images/adminpusat/IconDashboard.png')}}" class="icn">
@@ -59,7 +59,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="{{ route('adminpusat.profile') }}" style="font-family: nunito;color: #FFFFFF;">
+                                    <a class="nav-link" aria-current="page" href="{{ route('adminbranch.profile') }}" style="font-family: nunito;color: #FFFFFF;">
                                     <div class="row">
                                         <div class="col-2">
                                             <img src="{{asset('images/adminpusat/IconProfile.png')}}" class="icn">
@@ -79,10 +79,8 @@
                                                 Data Master   
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="{{ route('adminpusat.branch') }}">Branch</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('adminpusat.barber') }}">Barber</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('adminpusat.customer') }}">Customer</a></li>
-                                                <li><a class="dropdown-item" href="{{ route('adminpusat.hairstyle') }}">Hair Style</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('adminbranch.barber') }}">Barber</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('adminbranch.customer') }}">Customer</a></li>
                                                 <li><a class="dropdown-item" href="#">Payment</a></li>
                                             </ul>
                                         </div>
