@@ -17,4 +17,8 @@ class Customer extends Model
         'no_telepon',
         'photo'
     ];
+
+    public function orderbarang(){
+        return $this->belongsToMany(Orderbarang::class, 'customer_orderbarang', 'customer_id', 'orderbarang_id');
+    }
 }

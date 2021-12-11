@@ -42,7 +42,7 @@
             <div class="col-9">
             <h4 class="card-title">Data Branch</h4>
             </div>
-            <div class="col text-right">
+            <div class="col text-end">
             <a href="{{ route('adminpusat.branch.add') }}" class="customBtn ms-5">Add</a>
             </div>
         </div>

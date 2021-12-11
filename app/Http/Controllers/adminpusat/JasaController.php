@@ -10,7 +10,7 @@ use App\Models\User;
 class JasaController extends Controller
 {
     public function getjasa(){
-        $jasa = User::find(Auth::user()->id)->jasas;
+        $jasa = Jasa::all();
         return view('adminpusat.jasa.jasa', compact('jasa'));
     }
 

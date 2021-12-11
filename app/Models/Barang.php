@@ -20,4 +20,7 @@ class Barang extends Model
     public function users(){
         return $this->belongsToMany(User::class, 'barang_user', 'barang_id', 'user_id');
     }
+    public function orderbarang(){
+        return $this->hasMany(Orderbarang::class);
+    }
 }
