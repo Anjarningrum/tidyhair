@@ -45,6 +45,22 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'barber' => [
+            'driver' => 'session',
+            'provider' => 'barbers'
+        ],
+        'barber-api' => [
+            'driver' => 'passport',
+            'provider' => 'barbers',
+        ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
+        ],
+        'customer-api' => [
+            'driver' => 'passport',
+            'provider' => 'customers',
+        ]
     ],
 
     /*
@@ -69,7 +85,14 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'barbers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Barber::class,
+        ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
