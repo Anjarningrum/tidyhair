@@ -17,6 +17,7 @@
     <style>
         *{
             list-style: none;
+            font-family: 'Nunito' !important;
         }
         body {
             padding: 0px 0px 0px 0px;
