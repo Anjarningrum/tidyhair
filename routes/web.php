@@ -79,6 +79,15 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::post('adminpusat/orderbarang/{id}', [App\Http\Controllers\adminpusat\OrderbarangController::class, 'update'])->name('adminpusat.orderbarang.update');
     Route::get('adminpusat/orderbarang/delete/{id}', [App\Http\Controllers\adminpusat\OrderbarangController::class, 'delete'])->name('adminpusat.orderbarang.delete');
 
+    Route::get('adminpusat/orderjasa', [App\Http\Controllers\adminpusat\OrderjasaController::class, 'getorderjasa'])->name('adminpusat.orderjasa');
+    Route::get('adminpusat/orderjasa/{id}', [App\Http\Controllers\adminpusat\OrderjasaController::class, 'edit'])->name('adminpusat.editorderjasa');
+    Route::post('adminpusat/orderjasa/{id}', [App\Http\Controllers\adminpusat\OrderjasaController::class, 'update'])->name('adminpusat.orderjasa.update');
+    Route::get('adminpusat/orderjasa/delete/{id}', [App\Http\Controllers\adminpusat\OrderjasaController::class, 'delete'])->name('adminpusat.orderjasa.delete');
+
+    Route::get('adminpusat/transaksibarang', [App\Http\Controllers\adminpusat\TransaksibarangController::class, 'gettransaksibarang'])->name('adminpusat.transaksibarang');
+
+    Route::get('adminpusat/transaksijasa', [App\Http\Controllers\adminpusat\TransaksijasaController::class, 'gettransaksijasa'])->name('adminpusat.transaksijasa');
+
 });
 
 

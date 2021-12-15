@@ -2,16 +2,16 @@
 @section('content')
 <div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 ">Edit Pesanan Barang</h1>   
+        <h1 class="h2 ">Edit Pesanan Jasa</h1>   
       </div>
       <div class="row">
-        <form method="POST" class="col" action="{{ route('adminpusat.orderbarang.update',['id' => $ob->id]) }}" enctype="multipart/form-data">
+        <form method="POST" class="col" action="{{ route('adminpusat.orderjasa.update',['id' => $oj->id]) }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Nama Pelanggan :') }}</label>
 
             <div class="col-md-6">
-                <input id="name" type="text" class="form-control py-1 my-2 @error('name') is-invalid @enderror" name="nampelanggan" value="{{ $ob->customer[0]->name }}" required autofocus readonly>
+                <input id="name" type="text" class="form-control py-1 my-2 @error('name') is-invalid @enderror" name="nampelanggan" value="{{ $oj->customer[0]->name }}" required autofocus readonly>
 
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
             <label for="harga" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Nama Barang :') }}</label>
 
             <div class="col-md-6">
-                <input id="harga" type="text" class="form-control py-1 my-2 @error('harga') is-invalid @enderror" name="namabarang" value="{{ $ob->barang->nama }}" autofocus readonly>
+                <input id="harga" type="text" class="form-control py-1 my-2 @error('harga') is-invalid @enderror" name="namabarang" value="{{ $oj->jasa->nama }}" autofocus readonly>
 
                 @error('harga')
                     <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
             <label for="harga" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Harga :') }}</label>
 
             <div class="col-md-6">
-                <input id="harga" type="number" min="0" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="hargabarang" value="{{ $ob->barang->harga }}" autofocus readonly>
+                <input id="harga" type="number" min="0" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="hargabarang" value="{{ $oj->jasa->harga }}" autofocus readonly>
 
                 @error('diskon')
                     <span class="invalid-feedback" role="alert">
@@ -53,7 +53,7 @@
             <label for="qty" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Qty :') }}</label>
 
             <div class="col-md-6">
-                <input id="qty" type="number" min="0" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="qty" value="{{ $ob->qty }}" required autofocus readonly>
+                <input id="qty" type="number" min="0" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="qty" value="{{ $oj->qty }}" required autofocus readonly>
 
                 @error('diskon')
                     <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
             <label for="total" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Total :') }}</label>
 
             <div class="col-md-6">
-                <input id="total" type="number" min="0" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="total" value="{{ $ob->total_harga }}" required autofocus readonly>
+                <input id="total" type="number" min="0" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="total" value="{{ $oj->total_harga }}" required autofocus readonly>
 
                 @error('diskon')
                     <span class="invalid-feedback" role="alert">
@@ -81,7 +81,7 @@
             <label for="alamat" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Alamat Pengiriman:') }}</label>
 
             <div class="col-md-6">
-                <input id="alamat" type="text" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="alamat" value="{{ $ob->alamat }}" required autofocus readonly>
+                <input id="alamat" type="text" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="alamat" value="{{ $oj->alamat }}" required autofocus readonly>
 
                 @error('diskon')
                     <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
             <label for="ongkir" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Ongkir :') }}</label>
 
             <div class="col-md-6">
-                <input id="ongkir" type="text" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="alamat" value="{{ $ob->ongkir }}" required autofocus readonly>
+                <input id="ongkir" type="text" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="alamat" value="{{ $oj->ongkir }}" required autofocus readonly>
 
                 @error('diskon')
                     <span class="invalid-feedback" role="alert">
@@ -109,7 +109,7 @@
             <label for="metodepembayaran" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Metode Pembayaran :') }}</label>
 
             <div class="col-md-6">
-                <input id="metodepembayaran" type="text" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="alamat" value="{{ $ob->metode_pembayaran }}" required autofocus readonly>
+                <input id="metodepembayaran" type="text" class="form-control py-1 my-2 @error('diskon') is-invalid @enderror" name="alamat" value="{{ $oj->metode_pembayaran }}" required autofocus readonly>
 
                 @error('diskon')
                     <span class="invalid-feedback" role="alert">

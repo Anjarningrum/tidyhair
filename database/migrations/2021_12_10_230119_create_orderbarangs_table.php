@@ -15,6 +15,7 @@ class CreateOrderbarangsTable extends Migration
     {
         Schema::create('orderbarangs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_branch');
             $table->unsignedBigInteger('id_barang');
             $table->integer('total_harga');
             $table->integer('qty');
@@ -24,6 +25,7 @@ class CreateOrderbarangsTable extends Migration
             $table->enum('status',['active','finished','canceled']);
             $table->timestamps();
 
+            $table->foreign('id_branch')->references('id')->on('users');
             $table->foreign('id_barang')->references('id')->on('barangs');
         });
     }

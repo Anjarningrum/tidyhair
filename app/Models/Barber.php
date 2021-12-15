@@ -28,4 +28,10 @@ class Barber extends Authenticatable
     public function user(){
         return $this->belongsTo(User::class, 'id_branch');
     }
+    public function orderjasa(){
+        return $this->hasMany(Orderjasa::class);
+    }
+    public function transaksijasa(){
+        return $this->hasMany(Transaksijasa::class);
+    }
 }

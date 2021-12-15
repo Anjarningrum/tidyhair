@@ -1,13 +1,12 @@
 @extends('adminpusat.app')
 @section('content')
-<div class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 ">Tambah Barang</h1>
-        
+        <h1 class="h2 ">Tambah Jasa</h1>   
       </div>
-</div>
-<div class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
-<form method="POST" action="{{ route('adminpusat.barang.save') }}" enctype="multipart/form-data">
+      <div class="row">
+        <form method="POST" class="col" action="{{ route('adminpusat.jasa.save') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Nama :') }}</label>
@@ -79,15 +78,14 @@
             
         </div>
 
-        
-
         <div class="form-group row mb-0">             
             <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn" style="background-color: #C4C4C4;">
-                    {{ __('Add') }}
+                    {{ __('Tambah') }}
                 </button>
             </div>
         </div>
-    </form>
+        </form>
+      </div>
 </div>
 @endsection

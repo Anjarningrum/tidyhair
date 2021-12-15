@@ -10,6 +10,8 @@ class Orderjasa extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id_branch',
+        'id_barber',
         'id_jasa',
         'total_harga',
         'qty',
@@ -24,5 +26,14 @@ class Orderjasa extends Model
     }
     public function customer(){
         return $this->belongsToMany(Customer::class, 'customer_orderjasa', 'orderjasa_id', 'customer_id' );
+    }
+    public function barber(){
+        return $this->belongsTo(Barber::class, 'id_barber');
+    }
+    public function transaksijasa(){
+        return $this->hasOne(Transaksijasa::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class, 'id_branch');
     }
 }

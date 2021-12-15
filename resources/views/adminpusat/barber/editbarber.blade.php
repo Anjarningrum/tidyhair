@@ -13,11 +13,11 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2 ">Edit Barber</h1>   
       </div>
-      <div class="row">
+    <div class="row">
         <div class="col-xs col-md-3">
             <img src="{{ asset('storage/'.$barber->photo) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
         </div>
-        <form method="POST" class="col" action="{{ route('adminpusat.barber.update',['id' => $barber->id]) }}">
+    <form method="POST" class="col" action="{{ route('adminpusat.barber.update',['id' => $barber->id]) }}">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Name :') }}</label>
@@ -140,6 +140,7 @@
                 </button>
             </div>
         </div>
-      </div>
+    </form>
+    </div>
 </div>
 @endsection

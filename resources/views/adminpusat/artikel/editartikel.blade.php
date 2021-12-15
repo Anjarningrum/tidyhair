@@ -12,13 +12,16 @@
         opacity: 0.75;
     }
 </style>
-<div class="row my-3 px-4">
-    <h2>Edit Artikel</h2>
-</div>
-<div class="row my-3 mx-2 px-4">
-    <div class="col-12">
 
-    <form method="POST" action="{{ route('adminpusat.artikel.update',['id' => $artikel->id]) }}">
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 ">Edit Artikel</h1>   
+      </div>
+      <div class="row">
+        <div class="col-xs col-md-3">
+            <img src="{{ asset('storage/'.$artikel->image) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
+        </div>
+        <form method="POST" class="col" action="{{ route('adminpusat.artikel.update',['id' => $artikel->id]) }}">
         @csrf
         <div class="form-group row">
             <label for="judul" class="col-md-2 col-form-label text-md-right data py-0 my-2">{{ __('Judul :') }}</label>

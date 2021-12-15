@@ -28,72 +28,70 @@
         font-size: 15px;
     }
 </style>
-<div class="col-md ms-sm-auto col-lg">
-      <div class="text-center mb-5 mt-2">
-        <h1 class="h2 ">Order Barang</h1>
-        
-      </div>
-</div>
-<div class="col-md ms-sm-auto col-lg">
-<div class="row">
-    <div class="col grid-margin">
-    <div class="card">
-        <div class="card-body">
-        <div class="row mb-3">
-            <div class="col-9">
-            <h4 class="card-title">Data Order Barang</h4>
+
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 ">Order Barang</h1>   
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+            <div class="row mb-3">
+                <div class="col">
+                <h4 class="card-title">Data Order Barang</h4>
+                </div>
             </div>
-            <div class="col text-end">
-            <a href="{{ route('adminpusat.jasa.add') }}" class="customBtn ms-5">Add</a>
+            <div class="row mb-3 table-responsive">
+                <table class="table table-bordered table-hovered" id="table">
+                    <thead>
+                    <tr>
+                    <th width="5%">Id</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Nama Barang</th>
+                    <th>Branch</th>
+                    <th>Harga</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                    <th>Alamat Pengiriman</th>
+                    <th>Ongkir</th>
+                    <th>Metode Pembayaran</th>
+                    <th>Status</th>
+                    <th width="15%">Edit/Hapus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($ob as $o)
+                    <tr>
+                        <td align="center">{{ $o->id }}</td>
+                        <td align="center">{{ $o->customer[0]->name }}</td>
+                        <td align="center">{{ $o->barang->nama }}</td>
+                        <td align="center">{{ $o->user->name }}</td>
+                        <td align="center">{{ $o->barang->harga }}</td>
+                        <td align="center">{{ $o->qty }}</td>
+                        <td align="center">{{ $o->total_harga }}</td>
+                        <td align="center">{{ $o->alamat }}</td>
+                        <td align="center">{{ $o->ongkir }}</td>
+                        <td align="center">{{ $o->metode_pembayaran }}</td>
+                        <td align="center">{{ $o->status }}</td>
+                        <td align="center">
+                            <div style="margin-bottom:5px;">
+                                <a href="{{ route('adminpusat.editorderbarang', ['id'=>$o->id]) }}" class="customBtnEdit">
+                                    Edit
+                                </a>
+                            </div>
+                                <a href="{{ route('adminpusat.orderbarang.delete', ['id'=>$o->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
+                                    Delete
+                                </a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+                </table>
             </div>
-        </div>
-        <div class="row mb-3 table-responsive">
-            <table class="table table-bordered table-hovered" id="table">
-            <thead>
-                <tr>
-                <th width="5%">Id</th>
-                <th>Nama Barang</th>
-                <th>Harga</th>
-                <th>Total</th>
-                <th>Qty</th>
-                <th>Alamat Pengiriman</th>
-                <th>Ongkir</th>
-                <th>Metode Pembayaran</th>
-                <th>Status</th>
-                <th width="15%">Edit/Hapus</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($ob as $o)
-                <tr>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    <td align="center">{{ $o->id }}</td>
-                    
-                    <td><img src="" alt="" class="img-fluid img-thumbnail" width="150" ></td>
-                    <td align="center">
-                        <div style="margin-bottom:5px;">
-                            <a href="{{ route('adminpusat.editjasa', ['id'=>$o->id]) }}" class="customBtnEdit">
-                                Edit
-                            </a>
-                        </div>
-                            <a href="{{ route('adminpusat.jasa.delete', ['id'=>$o->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
-                                Delete
-                            </a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-            </table>
+            </div>
         </div>
         </div>
     </div>
-    </div>
-</div>
 </div>
 @endsection

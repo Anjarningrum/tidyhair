@@ -31,7 +31,7 @@
 
 <div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 ">Artikel</h1>   
+        <h1 class="h2 ">Transaksi Jasa</h1>   
     </div>
     <div class="row">
         <div class="col-12 grid-margin">
@@ -39,42 +39,34 @@
             <div class="card-body">
             <div class="row mb-3">
                 <div class="col">
-                <h4 class="card-title">Data Artikel</h4>
-                </div>
-                <div class="col text-end">
-                    <a href="{{ route('adminpusat.artikel.add') }}" class="customBtn ms-5">Tambah</a>
+                <h4 class="card-title">Data Transaksi Jasa</h4>
                 </div>
             </div>
             <div class="row mb-3 table-responsive">
                 <table class="table table-bordered table-hovered" id="table">
                     <thead>
                     <tr>
-                    <th width="5%">Id</th>
-                    <th>Judul</th>
-                    <th>Slug</th>
-                    <th>Isi</th>
-                    <th>Image</th>
-                    <th width="15%">Edit/Hapus</th>
+                    <th>Invoice</th>
+                    <th>Customer</th>
+                    <th>Jasa</th>
+                    <th>Branch</th>
+                    <th>Barber</th>
+                    <th>Qty</th>
+                    <th>Total Bayar</th>
+                    <th>Metode Pembayaran</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($artikel as $a)
+                    @foreach($tj as $t)
                     <tr>
-                        <td align="center">{{ $a->id }}</td>
-                        <td>{{ $a->judul }}</td>
-                        <td>{{ $a->slug }}</td>
-                        <td>{{ $a->isi }}</td>
-                        <td><img src="" alt="" class="img-fluid img-thumbnail" ></td>
-                        <td align="center">
-                            <div style="margin-bottom:5px;">
-                                <a href="{{ route('adminpusat.editartikel', ['id'=>$a->id]) }}" class="customBtnEdit">
-                                    Edit
-                                </a>
-                            </div>
-                                <a href="{{ route('adminpusat.artikel.delete', ['id'=>$a->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
-                                    Hapus
-                                </a>
-                        </td>
+                        <td align="center">{{ $t->invoice }}</td>
+                        <td align="center">{{ $t->customer->name }}</td>
+                        <td align="center">{{ $t->orderjasa->jasa->nama }}</td>
+                        <td align="center">{{ $t->orderjasa->user->name }}</td>
+                        <td align="center">{{ $t->orderjasa->barber->name }}</td>
+                        <td align="center">{{ $t->orderjasa->qty }}</td>
+                        <td align="center">{{ $t->orderjasa->total_harga }}</td>
+                        <td align="center">{{ $t->orderjasa->metode_pembayaran }}</td>
                     </tr>
                     @endforeach
                 </tbody>

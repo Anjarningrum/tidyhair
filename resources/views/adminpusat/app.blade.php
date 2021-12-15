@@ -241,12 +241,12 @@
                 <div class="collapse" id="order-collapse" style="">
                     <ul class="btn-toggle-nav">
                         <li><a class="text-light" href="{{ route('adminpusat.orderbarang') }}">Barang</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.orderjasa') }}">Jasa</a></li>
                     </ul>
                 </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link rounded collapsed" data-bs-toggle="collapse" data-bs-target="#transaksi-collapse" aria-expanded="false" href="">
                 <div class="row">
                     <div class="col-md-2 col-lg-2">
                         <span class="icn">
@@ -258,6 +258,12 @@
                     </div>
                 </div>
             </a>
+                <div class="collapse" id="transaksi-collapse" style="">
+                    <ul class="btn-toggle-nav">
+                        <li><a class="text-light" href="{{ route('adminpusat.transaksibarang') }}">Barang</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.transaksijasa') }}">Jasa</a></li>
+                    </ul>
+                </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">
@@ -296,7 +302,7 @@
                         <span class="icn">
                         </span>
                     </div>
-                    <div class="col-md col-lg mt-1 text-light">
+                    <div class="col-md col-lg mt-1 text-dark">
                         {{ __('Logout') }}
                     </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">

@@ -66,4 +66,20 @@ class User extends Authenticatable
     public function barbers(){
         return $this->hasMany(Barber::class);
     }
+
+    public function orderbarang(){
+        return $this->hasMany(Orderbarang::class);
+    }
+
+    public function orderjasa(){
+        return $this->hasMany(Orderjasa::class);
+    }
+
+    public function transaksibarang(){
+        return $this->hasMany(Transaksibarang::class);
+    }
+
+    public function transaksijasa(){
+        return $this->hasMany(Transaksijasa::class);
+    }
 }

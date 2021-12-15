@@ -27,4 +27,13 @@ class Customer extends Authenticatable
     public function orderbarang(){
         return $this->belongsToMany(Orderbarang::class, 'customer_orderbarang', 'customer_id', 'orderbarang_id');
     }
+    public function orderjasa(){
+        return $this->belongsToMany(Orderjasa::class, 'customer_orderjasa', 'customer_id', 'orderjasa_id');
+    }
+    public function transaksibarang(){
+        return $this->hasMany(Transaksibarang::class);
+    }
+    public function transaksijasa(){
+        return $this->hasMany(Transaksijasa::class);
+    }
 }

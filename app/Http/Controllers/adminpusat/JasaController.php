@@ -16,7 +16,8 @@ class JasaController extends Controller
 
     public function edit($id){
         $jasa = Jasa::findOrFail($id);
-        return view('adminpusat.jasa.editjasa', compact('jasa'));
+        $branch = User::role('adminbranch')->get();
+        return view('adminpusat.jasa.editjasa', compact('jasa', 'branch'));
     }
 
     public function update($id, Request $req){
@@ -40,7 +41,7 @@ class JasaController extends Controller
     public function save(Request $request){
         if($request->file('image')){
             
-            $file = $request->file('image')->store('imageproduct', 'public');
+            $file = $request->file('image')->store('imagejasa', 'public');
             
             $barang = Barang::create([
                 'nama' => $request->name,
