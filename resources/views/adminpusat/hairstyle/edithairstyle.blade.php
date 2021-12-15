@@ -8,16 +8,15 @@
         opacity: 0.75;
     }
 </style>
-<div class="row my-3 px-4">
-    <h2>Edit Hair Style</h2>
-</div>
-<div class="row my-3 mx-2 px-4">
-    <div class="col-3">
-        <img src="{{ asset('storage/'.$hair->image) }}" style="vertical-align: middle;width: 150px;height: auto;">
-    </div>
-    <div class="col-9">
-
-    <form method="POST" action="{{ route('adminpusat.hairstyle.update',['id' => $hair->id]) }}">
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 ">Edit Hairstyle</h1>   
+      </div>
+      <div class="row">
+        <div class="col-xs col-md-3">
+            <img src="{{ asset('storage/'.$hair->image) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
+        </div>
+        <form method="POST" class="col" action="{{ route('adminpusat.hairstyle.update',['id' => $hair->id]) }}">
         @csrf
         <input type="hidden" name="admin_id" value="{{ Auth::user()->id }}">
         <div class="form-group row">
@@ -70,7 +69,7 @@
                 </button>
             </div>
         </div>
-    </form>
-    </div>
+        </form>
+      </div>
 </div>
 @endsection

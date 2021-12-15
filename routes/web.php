@@ -74,6 +74,11 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat/jasa/add', [App\Http\Controllers\adminpusat\JasaController::class, 'add'])->name('adminpusat.jasa.add');
     Route::post('adminpusat/jasa/add', [App\Http\Controllers\adminpusat\JasaController::class, 'save'])->name('adminpusat.jasa.save');
 
+    Route::get('adminpusat/orderbarang', [App\Http\Controllers\adminpusat\OrderbarangController::class, 'getorderbarang'])->name('adminpusat.orderbarang');
+    Route::get('adminpusat/orderbarang/{id}', [App\Http\Controllers\adminpusat\OrderbarangController::class, 'edit'])->name('adminpusat.editorderbarang');
+    Route::post('adminpusat/orderbarang/{id}', [App\Http\Controllers\adminpusat\OrderbarangController::class, 'update'])->name('adminpusat.orderbarang.update');
+    Route::get('adminpusat/orderbarang/delete/{id}', [App\Http\Controllers\adminpusat\OrderbarangController::class, 'delete'])->name('adminpusat.orderbarang.delete');
+
 });
 
 

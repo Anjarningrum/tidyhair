@@ -117,155 +117,200 @@
 
         .fw-semibold { font-weight: 600; }
         .lh-tight { line-height: 1.25; }
+        #sidebarMenu{
+            background: #0B3F68;
+        }
     </style>
 </head>
-<body class="container-fluid mx-0 px-0">
-    <div class="vh-100">
-    <div class="container-fluid py-1" style="height: 100%;">
-        <div class="row" style="height: 100%;">
-            <div class="col-md-3 py-0 px-0 mx-1 border" style="background-color: #0B3F68;">
-                <div>
-                    <img src="{{asset('images/adminpusat/header.png')}}" class="img-fluid" >
+<body>    
+<div class="container-fluid">
+  <div class="row px-1">
+    <nav id="sidebarMenu" style="background: #154F80 !important;" class="col-md col-lg d-md-block bg-light sidebar collapse border me-1 p-0">
+    <div class="position-sticky">
+    <div class="row">
+        <div>
+            <img src="{{asset('images/adminpusat/header.png')}}" class="img-fluid" >
+        </div>
+    </div>
+    <div>
+        <div class="position-sticky pt-3">
+        <div class="row mb-4">
+            <div>
+                <img src="{{asset('images/adminpusat/WelcomAdminPusat.png')}}" class="img-fluid" style="margin: 5px 0px 5px 0px;">
+            </div>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ route('adminpusat.index') }}">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconDashboard.png')}}">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Beranda
+                    </div>
                 </div>
-                    <img src="{{asset('images/adminpusat/WelcomAdminPusat.png')}}" class="img-fluid" style="margin: 5px 0px 5px 0px;">
-                    <div class="container" style="margin: 15px 0px 5px 0px;padding: 0px;">
-                        <nav class="position-sticky">
-                            <ul style="padding: 0px 0px 0px 11px;">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{{ route('adminpusat.index') }}" style="font-family: nunito;color: #FFFFFF;">
-                                    <div class="row h-100">
-                                        <div class="col-2">
-                                            <img src="{{asset('images/adminpusat/IconDashboard.png')}}" class="icn">
-                                        </div>
-                                        <div class="col-10 px-0">
-                                            Dashboard    
-                                        </div>
-                                    </div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="{{ route('adminpusat.profile') }}" style="font-family: nunito;color: #FFFFFF;">
-                                    <div class="row">
-                                        <div class="col-2">
-                                            <img src="{{asset('images/adminpusat/IconProfile.png')}}" class="icn" style="margin-right: 15px">
-                                        </div>
-                                        <div class="col-10 px-0">
-                                            Profile    
-                                        </div>
-                                    </div>
-                                    </a>
-                                </li>
-
-
-                                <li class="mb-1">
-                                    <a class="btn rounded collapsed" data-bs-toggle="collapse" data-bs-target="#master-collapse" aria-expanded="false" style="font-family: nunito;color: #FFFFFF;">
-                                        <img src="{{asset('images/adminpusat/IconDataMaster.png')}}" class="icn" style="margin-right: 23px">
-                                        Data Master   
-                                    </a>
-                                    <div class="collapse" id="master-collapse" style="">
-                                    <ul class="btn-toggle-nav">
-                                        <li><a class="text-light" href="{{ route('adminpusat.branch') }}">Branch</a></li>
-                                        <li><a class="link-light" href="{{ route('adminpusat.barber') }}">Barber</a></li>
-                                        <li><a class="link-light" href="{{ route('adminpusat.customer') }}">Customer</a></li>
-                                        <li><a class="link-light" href="{{ route('adminpusat.hairstyle') }}">Hair Style</a></li>
-                                        <li><a class="link-light" href="#">Payment</a></li>
-                                    </ul>
-                                    </div>
-                                </li>
-                                <li class="mb-1">
-                                    <a class="btn rounded collapsed" data-bs-toggle="collapse" data-bs-target="#product-collapse" aria-expanded="false" style="font-family: nunito;color: #FFFFFF;">
-                                        <img src="{{asset('images/adminpusat/IconProduct.png')}}" class="icn" style="margin-right: 21px">
-                                        Product 
-                                    </a>
-                                    <div class="collapse" id="product-collapse" style="">
-                                        <ul class="btn-toggle-nav">
-                                            <li><a class="text-light" href="{{ route('adminpusat.barang') }}">Barang</a></li>
-                                            <li><a class="text-light" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="{{ route('adminpusat.artikel') }}" style="font-family: nunito;color: #FFFFFF;">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img src="{{asset('images/adminpusat/IconArtikel.png')}}" class="icn">
-                                            </div>
-                                            <div class="col-10 px-0">
-                                                Article   
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#" style="font-family: nunito;color: #FFFFFF;">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img src="{{asset('images/adminpusat/IconOrder.png')}}" class="icn">
-                                            </div>
-                                            <div class="col-10 px-0">
-                                                Order   
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#" style="font-family: nunito;color: #FFFFFF;">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img src="{{asset('images/adminpusat/IconTransaction.png')}}" class="icn">
-                                            </div>
-                                            <div class="col-10 px-0">
-                                                Transaction   
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#" style="font-family: nunito;color: #FFFFFF;">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img src="{{asset('images/adminpusat/IconFinance.png')}}" class="icn">
-                                            </div>
-                                            <div class="col-10 px-0">
-                                                Finance   
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#" style="font-family: nunito;color: #FFFFFF;">
-                                        <div class="row">
-                                            <div class="col-2">
-                                                <img src="{{asset('images/adminpusat/IconFeedback.png')}}" class="icn">
-                                            </div>
-                                            <div class="col-10 px-0">
-                                                Feedback   
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>            
-                    </div> 
-                    <div class="float-none" style="background-color: #154F80;margin-top:47%;">
-                        <a aria-current="page" href="{{ route('logout') }}" style="font-family: nunito;color: white;text-decoration:none;"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>             
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('adminpusat.profile') }}">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconProfile.png')}}">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Profil
+                    </div>
+                </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded collapsed" data-bs-toggle="collapse" data-bs-target="#master-collapse" aria-expanded="false" href="">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconDataMaster.png')}}">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Data Master
+                    </div>
+                </div>
+            </a>
+            <div class="collapse" id="master-collapse" style="">
+            <ul class="btn-toggle-nav">
+                <li><a class="text-light" href="{{ route('adminpusat.branch') }}">Branch</a></li>
+                <li><a class="link-light" href="{{ route('adminpusat.barber') }}">Barber</a></li>
+                <li><a class="link-light" href="{{ route('adminpusat.customer') }}">Customer</a></li>
+                <li><a class="link-light" href="{{ route('adminpusat.hairstyle') }}">Hair Style</a></li>
+                <li><a class="link-light" href="#">Payment</a></li>
+            </ul>
             </div>
-            <div class="col-md py-0 px-0 mx-1 border">
-              @yield('content')
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  rounded collapsed" data-bs-toggle="collapse" data-bs-target="#product-collapse" aria-expanded="false" href="">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconProduct.png')}}">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Produk
+                    </div>
+                </div>
+            </a>
+            <div class="collapse" id="product-collapse" style="">
+                <ul class="btn-toggle-nav">
+                    <li><a class="text-light" href="{{ route('adminpusat.barang') }}">Barang</a></li>
+                    <li><a class="text-light" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
+                </ul>
             </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('adminpusat.artikel') }}">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconArtikel.png')}}" width="21px">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Artikel
+                    </div>
+                </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded collapsed" data-bs-toggle="collapse" data-bs-target="#order-collapse" aria-expanded="false" href="">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconProduct.png')}}">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Pesanan
+                    </div>
+                </div>
+            </a>
+                <div class="collapse" id="order-collapse" style="">
+                    <ul class="btn-toggle-nav">
+                        <li><a class="text-light" href="{{ route('adminpusat.orderbarang') }}">Barang</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
+                    </ul>
+                </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconTransaction.png')}}" width="21px">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Transaksi
+                    </div>
+                </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconFinance.png')}}" width="21px">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Keuangan
+                    </div>
+                </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                            <img src="{{asset('images/adminpusat/IconFeedback.png')}}" width="21px">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-white">
+                        Ulasan
+                    </div>
+                </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+                <div class="row">
+                    <div class="col-md-2 col-lg-2">
+                        <span class="icn">
+                        </span>
+                    </div>
+                    <div class="col-md col-lg mt-1 text-light">
+                        {{ __('Logout') }}
+                    </div>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                        @csrf
+                    </form>
+                </div>
+            </a>
+          </li>
+        </ul>
         </div>
     </div>
     </div>
-    
+    </nav>
+    @yield('content')
+</div>
 </body>
 </html>
-

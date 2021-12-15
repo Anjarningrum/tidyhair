@@ -28,64 +28,65 @@
         font-size: 15px;
     }
 </style>
-<div class="col-md ms-sm-auto col-lg">
-      <div class="text-center mb-5 mt-2">
-        <h1 class="h2 ">Branch</h1>
-      </div>
-</div>
-<div class="col-md ms-sm-auto col-lg">
-<div class="row">
-    <div class="col grid-margin">
-    <div class="card">
-        <div class="card-body">
-        <div class="row mb-3">
-            <div class="col-9">
-            <h4 class="card-title">Data Branch</h4>
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 ">Branch</h1>   
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+            <div class="row mb-3">
+                <div class="col">
+                <h4 class="card-title">Data Branch</h4>
+                </div>
+                <div class="col text-end">
+                    <a href="{{ route('adminpusat.branch.add') }}" class="customBtn ms-5">Add</a>
+                </div>
             </div>
-            <div class="col text-end">
-            <a href="{{ route('adminpusat.branch.add') }}" class="customBtn ms-5">Add</a>
-            </div>
-        </div>
-        <div class="row mb-3 table-responsive">
-            <table class="table table-striped table-hover table-condensed" id="table">
-            <thead>
-                <tr>
-                <th width="5%">Id</th>
-                <th>Nama Branch</th>
-                <th>Email</th>
-                <th>Alamat</th>
-                <th>Telepon</th>
-                <th>Photo</th>
-                <th width="15%">Edit/Hapus</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($user as $u)
-                <tr>
-                    <td align="center">{{ $u->id }}</td>
-                    <td>{{ $u->name }}</td>
-                    <td>{{ $u->email }}</td>
-                    <td>{{ $u->alamat }}</td>
-                    <td>{{ $u->no_telepon }}</td>
-                    <td><img src="{{ asset('storage/'.$u->photo) }}" width="150" alt="" class="img-fluid img-thumbnail" ></td>
-                    <td align="center">
-                        <div style="margin-bottom:5px;">
-                            <a href="{{ route('adminpusat.editbranch', ['id'=>$u->id]) }}" class="customBtnEdit">
-                                Edit
+            <div class="row mb-3 table-responsive">
+                <table class="table table-bordered table-hovered" id="table">
+                <thead>
+                    <tr>
+                    <th width="5%">Id</th>
+                    <th>Nama Branch</th>
+                    <th>Email</th>
+                    <th>Alamat</th>
+                    <th>Telepon</th>
+                    <th>Photo</th>
+                    <th width="15%">Edit/Hapus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($user as $u)
+                    <tr>
+                        <td align="center">{{ $u->id }}</td>
+                        <td>{{ $u->name }}</td>
+                        <td>{{ $u->email }}</td>
+                        <td>{{ $u->alamat }}</td>
+                        <td>{{ $u->no_telepon }}</td>
+                        <td><img src="{{ asset('storage/'.$u->photo) }}" width="150" class="img-fluid img-thumbnail" ></td>
+                        <td align="center">
+                            <div style="margin-bottom:5px;">
+                                <a href="{{ route('adminpusat.editbranch', ['id'=>$u->id]) }}" class="customBtnEdit">
+                                    Edit
+                                </a>
+                            </div>
+                            <a href="{{ route('adminpusat.branch.delete', ['id'=>$u->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
+                                Delete
                             </a>
-                        </div>
-                        <a href="{{ route('adminpusat.branch.delete', ['id'=>$u->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
-                            Delete
-                        </a>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody>
-            </table>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+                </table>
+            </div>
+            </div>
         </div>
         </div>
-    </div>
     </div>
 </div>
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4">
+
 </div>
 @endsection
