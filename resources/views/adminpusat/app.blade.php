@@ -261,8 +261,10 @@
             </a>
                 <div class="collapse" id="transaksi-collapse" style="">
                     <ul class="btn-toggle-nav">
-                        <li><a class="text-light" href="{{ route('adminpusat.transaksibarang') }}">Barang</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.transaksijasa') }}">Jasa</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.transaksibarang') }}">Transaksi Barang</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.transaksijasa') }}">Transaksi Jasa</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranbarang') }}">Pembayaran Barang</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranjasa') }}">Pembayaran Jasa</a></li>
                     </ul>
                 </div>
           </li>
@@ -281,8 +283,8 @@
             </a>
                 <div class="collapse" id="keuangan-collapse" style="">
                     <ul class="btn-toggle-nav">
-                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranbarang') }}">Pembayaran Barang</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranjasa') }}">Pembayaran Jasa</a></li>
+                        <li><a class="text-light" href="">Branch</a></li>
+                        <li><a class="text-light" href="">Barber</a></li>
                     </ul>
                 </div>
           </li>
