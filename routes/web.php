@@ -85,8 +85,12 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat/orderjasa/delete/{id}', [App\Http\Controllers\adminpusat\OrderjasaController::class, 'delete'])->name('adminpusat.orderjasa.delete');
 
     Route::get('adminpusat/transaksibarang', [App\Http\Controllers\adminpusat\TransaksibarangController::class, 'gettransaksibarang'])->name('adminpusat.transaksibarang');
+    Route::get('adminpusat/pembayaranbarang', [App\Http\Controllers\adminpusat\PembayaranbarangController::class, 'getpembayaranbarang'])->name('adminpusat.pembayaranbarang');
+    Route::get('adminpusat/pembatalanbarang', [App\Http\Controllers\adminpusat\PembatalanbarangController::class, 'getpembatalanbarang'])->name('adminpusat.pembatalanbarang');
 
     Route::get('adminpusat/transaksijasa', [App\Http\Controllers\adminpusat\TransaksijasaController::class, 'gettransaksijasa'])->name('adminpusat.transaksijasa');
+    Route::get('adminpusat/pembayaranjasa', [App\Http\Controllers\adminpusat\PembayaranjasaController::class, 'getpembayaranjasa'])->name('adminpusat.pembayaranjasa');
+    Route::get('adminpusat/pembatalanjasa', [App\Http\Controllers\adminpusat\PembatalanjasaController::class, 'getpembatalanjasa'])->name('adminpusat.pembatalanjasa');
 
 });
 

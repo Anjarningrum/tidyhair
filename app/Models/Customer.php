@@ -36,4 +36,16 @@ class Customer extends Authenticatable
     public function transaksijasa(){
         return $this->hasMany(Transaksijasa::class);
     }
+    public function pembatalanbarang(){
+        return $this->hasMany(Pembatalanbarang::class);
+    }
+    public function pembatalanjasa(){
+        return $this->hasMany(Pembatalanjasa::class);
+    }
+    public function pembayaranbarang(){
+        return $this->hasMany(Pembayaranbarang::class);
+    }
+    public function pembayaranjasa(){
+        return $this->hasMany(Pembayaranjasa::class);
+    }
 }

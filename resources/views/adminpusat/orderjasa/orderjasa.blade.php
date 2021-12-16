@@ -41,6 +41,9 @@
                 <div class="col">
                 <h4 class="card-title">Data Order Jasa</h4>
                 </div>
+                <div class="col text-end mt-2">
+                    <a href="{{ route('adminpusat.pembatalanjasa') }}" class="customBtn ms-5">Pembatalan Jasa</a>
+                </div>
             </div>
             <div class="row mb-3 table-responsive">
                 <table class="table table-bordered table-hovered" id="table">

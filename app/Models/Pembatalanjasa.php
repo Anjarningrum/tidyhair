@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaksibarang extends Model
+class Pembatalanjasa extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,8 @@ class Transaksibarang extends Model
         'invoice',
         'customer_id',
         'branch_id',
-        'orderbarang_id',
+        'barber_id',
+        'orderjasa_id',
         'total_bayar',
         'metode_pembayaran',
     ];
@@ -24,10 +25,10 @@ class Transaksibarang extends Model
     public function customer(){
         return $this->belongsTo(Customer::class, 'customer_id');
     }
-    public function orderbarang(){
-        return $this->belongsTo(Orderbarang::class, 'orderbarang_id');
+    public function barber(){
+        return $this->belongsTo(Barber::class, 'barber_id');
     }
-    public function pembayaranbarang(){
-        return $this->hasOne(Pembayaranbarang::class);
+    public function orderjasa(){
+        return $this->belongsTo(Orderjasa::class, 'orderjasa_id');
     }
 }

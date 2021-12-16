@@ -33,6 +33,9 @@ class Orderjasa extends Model
     public function transaksijasa(){
         return $this->hasOne(Transaksijasa::class);
     }
+    public function pembatalanjasa(){
+        return $this->hasOne(Pembatalanjasa::class);
+    }
     public function user(){
         return $this->belongsTo(User::class, 'id_branch');
     }

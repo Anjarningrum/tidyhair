@@ -267,7 +267,7 @@
                 </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link rounded collapsed" data-bs-toggle="collapse" data-bs-target="#keuangan-collapse" aria-expanded="false" href="">
                 <div class="row">
                     <div class="col-md-2 col-lg-2">
                         <span class="icn">
@@ -279,6 +279,12 @@
                     </div>
                 </div>
             </a>
+                <div class="collapse" id="keuangan-collapse" style="">
+                    <ul class="btn-toggle-nav">
+                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranbarang') }}">Pembayaran Barang</a></li>
+                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranjasa') }}">Pembayaran Jasa</a></li>
+                    </ul>
+                </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="">

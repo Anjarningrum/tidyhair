@@ -32,4 +32,7 @@ class Orderbarang extends Model
     public function user(){
         return $this->belongsTo(User::class, 'id_branch');
     }
+    public function pembatalanbarang(){
+        return $this->hasOne(Pembatalanbarang::class);
+    }
 }

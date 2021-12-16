@@ -31,7 +31,7 @@
 
 <div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 ">Order Barang</h1>   
+        <h1 class="h2 ">Pembayaran Jasa</h1>   
     </div>
     <div class="row">
         <div class="col-12 grid-margin">
@@ -39,10 +39,7 @@
             <div class="card-body">
             <div class="row mb-3">
                 <div class="col">
-                <h4 class="card-title">Data Order Barang</h4>
-                </div>
-                <div class="col text-end mt-2">
-                    <a href="{{ route('adminpusat.pembatalanbarang') }}" class="customBtn ms-5">Pembatalan Barang</a>
+                <h4 class="card-title">Data Pembayaran Jasa</h4>
                 </div>
             </div>
             <div class="row mb-3 table-responsive">
@@ -50,42 +47,35 @@
                     <thead>
                     <tr>
                     <th width="5%">Id</th>
-                    <th>Nama Pelanggan</th>
-                    <th>Nama Barang</th>
+                    <th>Customer</th>
                     <th>Branch</th>
-                    <th>Harga</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                    <th>Alamat Pengiriman</th>
-                    <th>Ongkir</th>
-                    <th>Metode Pembayaran</th>
+                    <th>Barber</th>
+                    <th>Invoice</th>
+                    <th>Jumlah</th>
+                    <th>Metode</th>
+                    <th>Photo</th>
                     <th>Status</th>
-                    <th width="15%">Edit/Hapus</th>
+                    <th width="15%">Edit</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($ob as $o)
+                    @foreach($p as $p)
                     <tr>
-                        <td align="center">{{ $o->id }}</td>
-                        <td align="center">{{ $o->customer[0]->name }}</td>
-                        <td align="center">{{ $o->barang->nama }}</td>
-                        <td align="center">{{ $o->user->name }}</td>
-                        <td align="center">{{ $o->barang->harga }}</td>
-                        <td align="center">{{ $o->qty }}</td>
-                        <td align="center">{{ $o->total_harga }}</td>
-                        <td align="center">{{ $o->alamat }}</td>
-                        <td align="center">{{ $o->ongkir }}</td>
-                        <td align="center">{{ $o->metode_pembayaran }}</td>
-                        <td align="center">{{ $o->status }}</td>
+                        <td align="center">{{ $p->id }}</td>
+                        <td align="center">{{ $p->customer->name }}</td>
+                        <td align="center">{{ $p->user->name }}</td>
+                        <td align="center">{{ $p->barber->name }}</td>
+                        <td align="center">{{ $p->transaksibarang->invoice }}</td>
+                        <td align="center">{{ $p->transaksibarang->total_bayar }}</td>
+                        <td align="center">{{ $p->transaksibarang->metode_pembayaran }}</td>
+                        <td align="center"></td>
+                        <td align="center">{{ $p->status }}</td>
                         <td align="center">
                             <div style="margin-bottom:5px;">
-                                <a href="{{ route('adminpusat.editorderbarang', ['id'=>$o->id]) }}" class="customBtnEdit">
+                                <a href="{{ route('adminpusat.editorderbarang', ['id'=>$p->id]) }}" class="customBtnEdit">
                                     Edit
                                 </a>
                             </div>
-                                <a href="{{ route('adminpusat.orderbarang.delete', ['id'=>$o->id]) }}" onclick="return confirm('Yakin Hapus data')" class="customBtnDelete">
-                                    Delete
-                                </a>
                         </td>
                     </tr>
                     @endforeach

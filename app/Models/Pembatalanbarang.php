@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaksibarang extends Model
+class Pembatalanbarang extends Model
 {
     use HasFactory;
 
@@ -26,8 +26,5 @@ class Transaksibarang extends Model
     }
     public function orderbarang(){
         return $this->belongsTo(Orderbarang::class, 'orderbarang_id');
-    }
-    public function pembayaranbarang(){
-        return $this->hasOne(Pembayaranbarang::class);
     }
 }

@@ -34,4 +34,10 @@ class Barber extends Authenticatable
     public function transaksijasa(){
         return $this->hasMany(Transaksijasa::class);
     }
+    public function pembatalanjasa(){
+        return $this->hasMany(Pembatalanjasa::class);
+    }
+    public function pembayaranjasa(){
+        return $this->hasMany(Pembayaranjasa::class);
+    }
 }
