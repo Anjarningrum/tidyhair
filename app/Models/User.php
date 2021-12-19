@@ -79,11 +79,11 @@ class User extends Authenticatable
     }
 
     public function transaksibarang(){
-        return $this->hasMany(Transaksibarang::class);
+        return $this->hasMany(Transaksibarang::class, 'branch_id');
     }
 
     public function transaksijasa(){
-        return $this->hasMany(Transaksijasa::class);
+        return $this->hasMany(Transaksijasa::class, 'branch_id');
     }
 
     public function pembatalanbarang(){
@@ -95,11 +95,11 @@ class User extends Authenticatable
     }
 
     public function pembayaranbarang(){
-        return $this->hasMany(Pembayaranbarang::class);
+        return $this->hasMany(Pembayaranbarang::class, 'branch_id');
     }
 
     public function pembayaranjasa(){
-        return $this->hasMany(Pembayaranjasa::class);
+        return $this->hasMany(Pembayaranjasa::class, 'branch_id');
     }
 
     public function keuangan(){

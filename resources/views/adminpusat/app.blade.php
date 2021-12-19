@@ -98,10 +98,10 @@
             </a>
             <div class="collapse" id="master-collapse" style="">
             <ul class="btn-toggle-nav ms-4">
-                <li><a class="text-light" href="{{ route('adminpusat.branch') }}">Branch</a></li>
-                <li><a class="link-light" href="{{ route('adminpusat.barber') }}">Barber</a></li>
-                <li><a class="link-light" href="{{ route('adminpusat.customer') }}">Customer</a></li>
-                <li><a class="link-light" href="{{ route('adminpusat.hairstyle') }}">Hair Style</a></li>
+                <li class="mb-2 mt-2"><a class="text-light" href="{{ route('adminpusat.branch') }}">Branch</a></li>
+                <li class="mb-2"><a class="link-light" href="{{ route('adminpusat.barber') }}">Barber</a></li>
+                <li class="mb-2"><a class="link-light" href="{{ route('adminpusat.customer') }}">Customer</a></li>
+                <li class="mb-2"><a class="link-light" href="{{ route('adminpusat.hairstyle') }}">Hair Style</a></li>
             </ul>
             </div>
           </li>
@@ -120,8 +120,8 @@
             </a>
             <div class="collapse" id="product-collapse" style="">
                 <ul class="btn-toggle-nav ms-4">
-                    <li><a class="text-light" href="{{ route('adminpusat.barang') }}">Barang</a></li>
-                    <li><a class="text-light" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
+                    <li class="mb-2 mt-2"><a class="text-light" href="{{ route('adminpusat.barang') }}">Barang</a></li>
+                    <li class="mb-2"><a class="text-light" href="{{ route('adminpusat.jasa') }}">Jasa</a></li>
                 </ul>
             </div>
           </li>
@@ -154,8 +154,8 @@
             </a>
                 <div class="collapse" id="order-collapse" style="">
                     <ul class="btn-toggle-nav ms-4">
-                        <li><a class="text-light" href="{{ route('adminpusat.orderbarang') }}">Barang</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.orderjasa') }}">Jasa</a></li>
+                        <li class="mb-2 mt-2"><a class="text-light" href="{{ route('adminpusat.orderbarang') }}">Barang</a></li>
+                        <li class="mb-2"><a class="text-light" href="{{ route('adminpusat.orderjasa') }}">Jasa</a></li>
                     </ul>
                 </div>
           </li>
@@ -174,10 +174,10 @@
             </a>
                 <div class="collapse" id="transaksi-collapse" style="">
                     <ul class="btn-toggle-nav ms-4">
-                        <li><a class="text-light" href="{{ route('adminpusat.transaksibarang') }}">Transaksi Barang</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.transaksijasa') }}">Transaksi Jasa</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranbarang') }}">Pembayaran Barang</a></li>
-                        <li><a class="text-light" href="{{ route('adminpusat.pembayaranjasa') }}">Pembayaran Jasa</a></li>
+                        <li class="mb-2 mt-2"><a class="text-light" href="{{ route('adminpusat.transaksibarang') }}">Transaksi Barang</a></li>
+                        <li class="mb-2"><a class="text-light" href="{{ route('adminpusat.transaksijasa') }}">Transaksi Jasa</a></li>
+                        <li class="mb-2"><a class="text-light" href="{{ route('adminpusat.pembayaranbarang') }}">Pembayaran Barang</a></li>
+                        <li class="mb-2"><a class="text-light" href="{{ route('adminpusat.pembayaranjasa') }}">Pembayaran Jasa</a></li>
                     </ul>
                 </div>
           </li>
@@ -196,8 +196,8 @@
             </a>
                 <div class="collapse" id="keuangan-collapse" style="">
                     <ul class="btn-toggle-nav ms-4">
-                        <li><a class="text-light" href="">Keuagan Branch</a></li>
-                        <li><a class="text-light" href="">Keuagan Barber</a></li>
+                        <li class="mb-2"><a class="text-light" href="">Keuangan Branch</a></li>
+                        <li class="mb-2"><a class="text-light" href="">Keuangan Barber</a></li>
                     </ul>
                 </div>
           </li>
@@ -216,8 +216,8 @@
             </a>
                 <div class="collapse" id="ulasan-collapse" style="">
                     <ul class="btn-toggle-nav ms-4">
-                        <li><a class="text-light" href="">Ulasan Branch</a></li>
-                        <li><a class="text-light" href="">Ulasan Barber</a></li>
+                        <li class="mb-2 mt-2"><a class="text-light" href="">Ulasan Branch</a></li>
+                        <li class="mb-2"><a class="text-light" href="">Ulasan Barber</a></li>
                     </ul>
                 </div>
           </li>
