@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Malhal\Geographical\Geographical;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, Geographical;
 
     /**
      * The attributes that are mass assignable.
@@ -25,7 +26,9 @@ class User extends Authenticatable
         'no_telepon',
         'alamat',
         'photo',
-        'id_branch'
+        'id_branch',
+        'longitude',
+        'latitude'
     ];
     //protected $guard_name = 'api';
     /**
@@ -68,11 +71,11 @@ class User extends Authenticatable
     }
 
     public function orderbarang(){
-        return $this->hasMany(Orderbarang::class);
+        return $this->hasMany(Orderbarang::class, 'id_branch');
     }
 
     public function orderjasa(){
-        return $this->hasMany(Orderjasa::class);
+        return $this->hasMany(Orderjasa::class, 'id_branch');
     }
 
     public function transaksibarang(){
@@ -84,11 +87,11 @@ class User extends Authenticatable
     }
 
     public function pembatalanbarang(){
-        return $this->hasMany(Pembatalanbarang::class);
+        return $this->hasMany(Pembatalanbarang::class, 'branch_id');
     }
 
     public function pembatalanjasa(){
-        return $this->hasMany(Pembatalanjasa::class);
+        return $this->hasMany(Pembatalanjasa::class, 'branch_id');
     }
 
     public function pembayaranbarang(){
@@ -97,5 +100,9 @@ class User extends Authenticatable
 
     public function pembayaranjasa(){
         return $this->hasMany(Pembayaranjasa::class);
+    }
+
+    public function keuangan(){
+        return $this->hasMany(Keuanganbranch::class);
     }
 }

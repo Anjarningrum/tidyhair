@@ -1,13 +1,11 @@
 @extends('adminbranch.app')
 @section('content')
-<div class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2 ">Tambah Barber</h1>
-        
+        <h1 class="h2 ">Tambah Barber</h1>   
       </div>
-</div>
-<div class="col-md-12 ms-sm-auto col-lg-12 px-md-4">
-<form method="POST" action="{{ route('adminbranch.barber.save') }}" enctype="multipart/form-data">
+      <div class="row">
+        <form method="POST" class="col" action="{{ route('adminbranch.barber.save') }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Name :') }}</label>
@@ -87,25 +85,7 @@
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="branch" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Branch :') }}</label>
-
-            <div class="col-md-6">
-
-                <select name="branch" id="branch" class="form-control py-1 my-2 @error('branch') is-invalid @enderror">
-                    <option value=""> -- Select One --</option>
-                    
-                        <option value="{{ $branch->id }}">{{  $branch->name }}</option>
-                    
-                </select>
-
-                @error('branch')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
+        <input type="hidden" name="branch" value="{{ Auth::user()->id }}">
 
         <div class="form-group row mb-2">
             <label for="image" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Photo :') }}</label>
@@ -124,10 +104,11 @@
         <div class="form-group row mb-0">             
             <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn" style="background-color: #C4C4C4;">
-                    {{ __('Add') }}
+                    {{ __('Tambah') }}
                 </button>
             </div>
         </div>
-    </form>
+        </form>
+      </div>
 </div>
 @endsection

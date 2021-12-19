@@ -28,7 +28,6 @@
         font-size: 15px;
     }
 </style>
-
 <div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2 ">Order Barang</h1>   
@@ -36,6 +35,7 @@
     <div class="row">
         <div class="col-12 grid-margin">
         <div class="card">
+            <div class="card-body">
             <div class="card-body">
             <div class="row mb-3">
                 <div class="col">

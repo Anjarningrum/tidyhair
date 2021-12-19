@@ -15,21 +15,21 @@ class BarberSeeder extends Seeder
     public function run()
     {
         $barber1 = Barber::create([
-            'id_branch' => '2',
+            'id_branch' => '1',
             'name' => 'barber3',
             'email' => 'barber3@mail.com',
             'password' => bcrypt('12345678'),
         ]);
 
         $barber2 = Barber::create([
-            'id_branch' => '4',
+            'id_branch' => '1',
             'name' => 'barber4',
             'email' => 'barber4@mail.com',
             'password' => bcrypt('12345678'),
         ]);
 
         $barber3 = Barber::create([
-            'id_branch' => '3',
+            'id_branch' => '1',
             'name' => 'barber5',
             'email' => 'barber5@mail.com',
             'password' => bcrypt('12345678'),

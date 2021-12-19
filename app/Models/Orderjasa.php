@@ -21,6 +21,10 @@ class Orderjasa extends Model
         'status'
     ];
 
+    protected $casts = [
+        'waktu_pesanan' => 'date:hh:mm',
+    ];
+
     public function jasa(){
         return $this->belongsTo(Jasa::class, 'id_jasa');
     }

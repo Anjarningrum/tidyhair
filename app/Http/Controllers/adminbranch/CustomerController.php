@@ -12,4 +12,9 @@ class CustomerController extends Controller
         $cus = Customer::all();
         return view('adminbranch.customer.customer', compact('cus'));
     }
+
+    public function viewcustomer($id){
+        $cus = Customer::findOrFail($id);
+        return view('adminbranch.customer.viewcustomer', compact('cus'));
+    }
 }

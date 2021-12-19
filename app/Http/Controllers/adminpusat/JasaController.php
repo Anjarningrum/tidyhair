@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Jasa;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class JasaController extends Controller
 {
@@ -23,6 +24,20 @@ class JasaController extends Controller
     public function update($id, Request $req){
         $jasa = Jasa::findOrFail($id);
 
+        if($req->file('image')){
+            Storage::delete('public/'.$jasa->photo);
+            $file = $req->file('image')->store('imagejasa', 'public');
+            $jasa->image = $file;
+        }
+            $jasa->nama = $req->name;
+            $jasa->harga = $req->harga;
+            $jasa->diskon = $req->diskon;
+            
+            $jasa->users()->detach();
+
+            foreach($req->branch as $b){
+                $jasa->users()->attach($b);
+            }
         $jasa->save();
 
         return redirect()->route('adminpusat.jasa');
@@ -43,16 +58,15 @@ class JasaController extends Controller
             
             $file = $request->file('image')->store('imagejasa', 'public');
             
-            $barang = Barang::create([
+            $jasa = Jasa::create([
                 'nama' => $request->name,
                 'harga' => $request->harga,
-                'stok' => $request->stok,
                 'diskon' => $request->diskon,
                 'image' => $file
             ]);
-            $barang->users()->attach(Auth::user()->id);
+            $jasa->users()->attach(Auth::user()->id);
 
-            return redirect()->route('adminpusat.barang')->with('status','Berhasil Menambah Produk Baru');
+            return redirect()->route('adminpusat.jasa')->with('status','Berhasil Menambah Produk Baru');
         }
     }
 }

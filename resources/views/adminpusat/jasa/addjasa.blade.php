@@ -37,20 +37,6 @@
         </div>
 
         <div class="form-group row">
-            <label for="stok" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Stok :') }}</label>
-
-            <div class="col-md-6">
-                <input id="stok" type="number" min="1" class="form-control px-0 py-1 my-2 @error('stok') is-invalid @enderror" name="stok" required autocomplete="stok" autofocus>
-
-                @error('stok')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
-        <div class="form-group row">
             <label for="diskon" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Diskon (%) :') }}</label>
 
             <div class="col-md-6">

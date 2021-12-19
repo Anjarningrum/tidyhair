@@ -23,7 +23,6 @@ class BarangSeeder extends Seeder
             'diskon' => '5'
         ]);
         $barang->users()->attach('2');
-        $barang->users()->attach('3');
 
         $barang = Barang::create([
             'id' => '2',
@@ -33,7 +32,6 @@ class BarangSeeder extends Seeder
             'diskon' => '5'
         ]);
         $barang->users()->attach('2');
-        $barang->users()->attach('3');
 
         $barang = Barang::create([
             'id' => '3',
@@ -43,7 +41,6 @@ class BarangSeeder extends Seeder
             'diskon' => '5'
         ]);
         $barang->users()->attach('2');
-        $barang->users()->attach('3');
 
         $barang = Barang::create([
             'id' => '4',
@@ -53,6 +50,5 @@ class BarangSeeder extends Seeder
             'diskon' => '5'
         ]);
         $barang->users()->attach('2');
-        $barang->users()->attach('3');
     }
 }

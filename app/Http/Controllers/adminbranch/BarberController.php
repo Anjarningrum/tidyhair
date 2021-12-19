@@ -60,6 +60,7 @@ class BarberController extends Controller
             
             $barber = Barber::create([
                 'name' => $req->name,
+                'id_branch' => $req->branch,
                 'email' => $req->email,
                 'password' => Hash::make($req->password),
                 'no_telepon' => $req->no_telepon,

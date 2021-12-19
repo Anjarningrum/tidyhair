@@ -22,6 +22,8 @@ class CreateOrderjasasTable extends Migration
             $table->integer('qty');
             $table->string('alamat');
             $table->integer('ongkir');
+            $table->date('tanggal_pesanan')->nullable();
+            $table->timestamp('waktu_pesanan')->nullable();
             $table->enum('metode_pembayaran', ['ovo','dana','cash']);
             $table->enum('status',['active','finished','canceled']);
             $table->timestamps();

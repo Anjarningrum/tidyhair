@@ -122,7 +122,7 @@
         <div class="form-group row mb-0">             
             <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn" style="background-color: #C4C4C4;">
-                    {{ __('Add') }}
+                    {{ __('Tambah') }}
                 </button>
             </div>
         </div>

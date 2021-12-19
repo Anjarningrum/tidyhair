@@ -69,7 +69,7 @@
                         <td>{{ $b->alamat }}</td>
                         <td>{{ $b->no_telepon }}</td>
                         <td>{{ $b->user->name }}</td>
-                        <td><img src="{{ asset('storage/'.$b->photo) }}" alt="" class="img-fluid img-thumbnail" ></td>
+                        <td><img src="{{ asset('storage/'.$b->photo) }}" alt="" class="img-fluid img-thumbnail" width="100"></td>
                         <td align="center">
                             <div style="margin-bottom:5px;">
                                 <a href="{{ route('adminpusat.editbarber', ['id'=>$b->id]) }}" class="customBtnEdit">

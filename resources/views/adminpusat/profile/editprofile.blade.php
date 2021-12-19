@@ -105,7 +105,7 @@
                 </div>
             </div>
 
-            <div class="form-group row mb-0">             
+            <div class="form-group row mb-0 mb-4">             
                 <div class="col-md-6 offset-md-4">
                     <button type="submit" class="btn" style="background-color: #C4C4C4;">
                         {{ __('Save') }}
@@ -115,5 +115,7 @@
         </form>
       </div>
 </div>
-
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4">
+    
+</div>
 @endsection

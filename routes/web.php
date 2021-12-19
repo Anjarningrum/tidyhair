@@ -110,18 +110,39 @@ Route::group(['middleware' => ['role:adminbranch']], function (){
     Route::post('adminbranch/barber/add', [App\Http\Controllers\adminbranch\BarberController::class, 'save'])->name('adminbranch.barber.save');
 
     Route::get('adminbranch/customer', [App\Http\Controllers\adminbranch\CustomerController::class, 'getcustomer'])->name('adminbranch.customer');
-    Route::get('adminbranch/editcustomer/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'edit'])->name('adminbranch.editcustomer');
-    Route::post('adminbranch/editcustomer/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'update'])->name('adminbranch.customer.update');
-    Route::get('adminbranch/customer/delete/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'delete'])->name('adminbranch.customer.delete');
-    Route::get('adminbranch/customer/add', [App\Http\Controllers\adminbranch\CustomerController::class, 'add'])->name('adminbranch.customer.add');
-    Route::post('adminbranch/customer/add', [App\Http\Controllers\adminbranch\CustomerController::class, 'save'])->name('adminbranch.customer.save');
+    Route::get('adminbranch/viewcustomer/{id}', [App\Http\Controllers\adminbranch\CustomerController::class, 'viewcustomer'])->name('adminbranch.viewcustomer');
+    
+    Route::get('adminbranch/barang', [App\Http\Controllers\adminbranch\BarangController::class, 'getbarang'])->name('adminbranch.barang');
+    Route::get('adminbranch/editbarang/{id}', [App\Http\Controllers\adminbranch\BarangController::class, 'edit'])->name('adminbranch.editbarang');
+    Route::post('adminbranch/editbarang/{id}', [App\Http\Controllers\adminbranch\BarangController::class, 'update'])->name('adminbranch.barang.update');
+    Route::get('adminbranch/barang/delete/{id}', [App\Http\Controllers\adminbranch\BarangController::class, 'delete'])->name('adminbranch.barang.delete');
+    Route::get('adminbranch/barang/add', [App\Http\Controllers\adminbranch\BarangController::class, 'add'])->name('adminbranch.barang.add');
+    Route::post('adminbranch/barang/add', [App\Http\Controllers\adminbranch\BarangController::class, 'save'])->name('adminbranch.barang.save');
+    
+    Route::get('adminbranch/jasa', [App\Http\Controllers\adminbranch\JasaController::class, 'getjasa'])->name('adminbranch.jasa');
+    Route::get('adminbranch/editjasa/{id}', [App\Http\Controllers\adminbranch\JasaController::class, 'edit'])->name('adminbranch.editjasa');
+    Route::post('adminbranch/editjasa/{id}', [App\Http\Controllers\adminbranch\JasaController::class, 'update'])->name('adminbranch.jasa.update');
+    Route::get('adminbranch/jasa/delete/{id}', [App\Http\Controllers\adminbranch\JasaController::class, 'delete'])->name('adminbranch.jasa.delete');
+    Route::get('adminbranch/jasa/add', [App\Http\Controllers\adminbranch\JasaController::class, 'add'])->name('adminbranch.jasa.add');
+    Route::post('adminbranch/jasa/add', [App\Http\Controllers\adminbranch\JasaController::class, 'save'])->name('adminbranch.jasa.save');
 
-    Route::get('adminbranch/artikel', [App\Http\Controllers\adminbranch\ArtikelController::class, 'getartikel'])->name('adminbranch.artikel');
-    Route::get('adminbranch/editartikel/{id}', [App\Http\Controllers\adminbranch\ArtikelController::class, 'edit'])->name('adminbranch.editartikel');
-    Route::post('adminbranch/editartikel/{id}', [App\Http\Controllers\adminbranch\ArtikelController::class, 'update'])->name('adminbranch.artikel.update');
-    Route::get('adminbranch/artikel/delete/{id}', [App\Http\Controllers\adminbranch\ArtikelController::class, 'delete'])->name('adminbranch.artikel.delete');
-    Route::get('adminbranch/artikel/add', [App\Http\Controllers\adminbranch\ArtikelController::class, 'add'])->name('adminbranch.artikel.add');
-    Route::post('adminbranch/artikel/add', [App\Http\Controllers\adminbranch\ArtikelController::class, 'save'])->name('adminbranch.artikel.save');
+    Route::get('adminbranch/orderbarang', [App\Http\Controllers\adminbranch\OrderbarangController::class, 'getorderbarang'])->name('adminbranch.orderbarang');
+    Route::get('adminbranch/orderbarang/{id}', [App\Http\Controllers\adminbranch\OrderbarangController::class, 'edit'])->name('adminbranch.editorderbarang');
+    Route::post('adminbranch/orderbarang/{id}', [App\Http\Controllers\adminbranch\OrderbarangController::class, 'update'])->name('adminbranch.orderbarang.update');
+    Route::get('adminbranch/orderbarang/delete/{id}', [App\Http\Controllers\adminbranch\OrderbarangController::class, 'delete'])->name('adminbranch.orderbarang.delete');
+
+    Route::get('adminbranch/orderjasa', [App\Http\Controllers\adminbranch\OrderjasaController::class, 'getorderjasa'])->name('adminbranch.orderjasa');
+    Route::get('adminbranch/orderjasa/{id}', [App\Http\Controllers\adminbranch\OrderjasaController::class, 'edit'])->name('adminbranch.editorderjasa');
+    Route::post('adminbranch/orderjasa/{id}', [App\Http\Controllers\adminbranch\OrderjasaController::class, 'update'])->name('adminbranch.orderjasa.update');
+    Route::get('adminbranch/orderjasa/delete/{id}', [App\Http\Controllers\adminbranch\OrderjasaController::class, 'delete'])->name('adminbranch.orderjasa.delete');
+
+    Route::get('adminbranch/transaksibarang', [App\Http\Controllers\adminbranch\TransaksibarangController::class, 'gettransaksibarang'])->name('adminbranch.transaksibarang');
+    Route::get('adminbranch/pembayaranbarang', [App\Http\Controllers\adminbranch\PembayaranbarangController::class, 'getpembayaranbarang'])->name('adminbranch.pembayaranbarang');
+    Route::get('adminbranch/pembatalanbarang', [App\Http\Controllers\adminbranch\PembatalanbarangController::class, 'getpembatalanbarang'])->name('adminbranch.pembatalanbarang');
+
+    Route::get('adminbranch/transaksijasa', [App\Http\Controllers\adminbranch\TransaksijasaController::class, 'gettransaksijasa'])->name('adminbranch.transaksijasa');
+    Route::get('adminbranch/pembayaranjasa', [App\Http\Controllers\adminbranch\PembayaranjasaController::class, 'getpembayaranjasa'])->name('adminbranch.pembayaranjasa');
+    Route::get('adminbranch/pembatalanjasa', [App\Http\Controllers\adminbranch\PembatalanjasaController::class, 'getpembatalanjasa'])->name('adminbranch.pembatalanjasa');
 });
 
 

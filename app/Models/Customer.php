@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Malhal\Geographical\Geographical;
 
 class Customer extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, Geographical;
 
     protected $fillable = [
         'name',
@@ -19,7 +20,9 @@ class Customer extends Authenticatable
         'password',
         'alamat',
         'no_telepon',
-        'photo'
+        'photo',
+        'longitude',
+        'latitude'
     ];
     protected $hidden = [
         'password',

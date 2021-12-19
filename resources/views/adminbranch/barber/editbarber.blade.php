@@ -8,16 +8,16 @@
         opacity: 0.75;
     }
 </style>
-<div class="row my-3 px-4">
-    <h2>Edit Barber</h2>
-</div>
-<div class="row my-3 mx-2 px-4">
-    <div class="col-3">
-        <img src="{{ asset('storage/'.$barber->photo) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
-    </div>
-    <div class="col-9">
 
-    <form method="POST" action="{{ route('adminbranch.barber.update',['id' => $barber->id]) }}" enctype="multipart/form-data">
+<div class="col-md-9 ms-sm-auto col-lg-9 px-md-4 border">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 ">Edit Barber</h1>   
+      </div>
+    <div class="row">
+        <div class="col-xs col-md-3">
+            <img src="{{ asset('storage/'.$barber->photo) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
+        </div>
+    <form method="POST" class="col" action="{{ route('adminbranch.barber.update',['id' => $barber->id]) }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Name :') }}</label>
@@ -32,6 +32,8 @@
                 @enderror
             </div>
         </div>
+
+        <input type="hidden" name="branch" value="{{ Auth::user()->id }}">
 
         <div class="form-group row">
             <label for="email" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('E-Mail Address :') }}</label>
@@ -98,22 +100,6 @@
             </div>
         </div>
 
-        <div class="form-group row">
-
-        <input id="branch" type="hidden" name="branch" value="{{ $barber->user->id }}">
-            <label for="branch" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Branch :') }}</label>
-
-            <div class="col-md-6">
-                <input id="branch" type="text" class="form-control py-1 my-2 @error('branch') is-invalid @enderror" value="{{ $barber->user->name }}" readonly>
-
-                @error('branch')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-
         <div class="form-group row mb-2">
             <label for="image" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Photo :') }}</label>
 
@@ -132,7 +118,7 @@
         <div class="form-group row mb-0">             
             <div class="col-md-6 offset-md-4">
                 <button type="submit" class="btn" style="background-color: #C4C4C4;">
-                    {{ __('Save') }}
+                    {{ __('Simpan') }}
                 </button>
             </div>
         </div>
