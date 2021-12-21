@@ -8,11 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use Malhal\Geographical\Geographical;
 
 class Customer extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, Geographical;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     protected $fillable = [
         'name',
@@ -50,5 +49,11 @@ class Customer extends Authenticatable
     }
     public function pembayaranjasa(){
         return $this->hasMany(Pembayaranjasa::class);
+    }
+    public function ulasanbranch(){
+        return $this->hasMany(Ulasanbranch::class);
+    }
+    public function ulasanbarber(){
+        return $this->hasMany(Ulasanbarber::class);
     }
 }

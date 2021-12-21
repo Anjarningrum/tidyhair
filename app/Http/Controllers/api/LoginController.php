@@ -45,6 +45,7 @@ class LoginController extends Controller
             
             $barber = Barber::select('barbers.*')->find(auth()->guard('barber')->user()->id);
             $success =  $barber;
+            $success['success'] = true;
             $success['token'] =  $barber->createToken('MyApp',['barber'])->accessToken; 
 
             return response()->json($success, 200);
@@ -70,6 +71,7 @@ class LoginController extends Controller
             
             $customer = Customer::select('customers.*')->find(auth()->guard('customer')->user()->id);
             $success =  $customer;
+            $success['success'] = true;
             $success['token'] =  $customer->createToken('MyApp',['customer'])->accessToken; 
 
             return response()->json($success, 200);

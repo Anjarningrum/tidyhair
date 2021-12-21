@@ -21,4 +21,10 @@ Route::group( ['prefix' => 'customer','middleware' => ['auth:customer-api','scop
     Route::get('dashboard',[LoginController::class, 'customerDashboard']);
     Route::post('logout',[LoginController::class, 'customerlogout'])->name('customer.logout');
 
+    Route::get('photo/{id}',[App\Http\Controllers\api\customer\HomeController::class, 'getphoto']);
+    Route::get('profil',[App\Http\Controllers\api\customer\HomeController::class, 'profil']);
+    Route::get('topbranch',[App\Http\Controllers\api\customer\BranchController::class, 'topbranch']);
+    Route::get('ulasanpreview',[App\Http\Controllers\api\customer\UlasanController::class, 'ulasanpreview']);
+    Route::get('ulasanall',[App\Http\Controllers\api\customer\UlasanController::class, 'ulasanall']);
+    Route::get('artikel',[App\Http\Controllers\api\customer\ArtikelController::class, 'artikel']);
 });

@@ -92,6 +92,9 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat/pembayaranjasa', [App\Http\Controllers\adminpusat\PembayaranjasaController::class, 'getpembayaranjasa'])->name('adminpusat.pembayaranjasa');
     Route::get('adminpusat/pembatalanjasa', [App\Http\Controllers\adminpusat\PembatalanjasaController::class, 'getpembatalanjasa'])->name('adminpusat.pembatalanjasa');
 
+    Route::get('adminpusat/ulasanbarber', [App\Http\Controllers\adminpusat\UlasanbarberController::class, 'getulasanbarber'])->name('adminpusat.ulasanbarber');
+    Route::get('adminpusat/ulasanbranch', [App\Http\Controllers\adminpusat\UlasanbranchController::class, 'getulasanbranch'])->name('adminpusat.ulasanbranch');
+
 });
 
 

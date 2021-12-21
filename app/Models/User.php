@@ -8,11 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-use Malhal\Geographical\Geographical;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, Geographical;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -104,5 +103,9 @@ class User extends Authenticatable
 
     public function keuangan(){
         return $this->hasMany(Keuanganbranch::class);
+    }
+
+    public function ulasanbarber(){
+        return $this->hasMany(Ulasanbarber::class);
     }
 }

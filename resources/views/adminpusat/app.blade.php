@@ -216,8 +216,8 @@
             </a>
                 <div class="collapse" id="ulasan-collapse" style="">
                     <ul class="btn-toggle-nav ms-4">
-                        <li class="mb-2 mt-2"><a class="text-light" href="">Ulasan Branch</a></li>
-                        <li class="mb-2"><a class="text-light" href="">Ulasan Barber</a></li>
+                        <li class="mb-2 mt-2"><a class="text-light" href="{{ route('adminpusat.ulasanbranch') }}">Ulasan Branch</a></li>
+                        <li class="mb-2"><a class="text-light" href="{{ route('adminpusat.ulasanbarber') }}">Ulasan Barber</a></li>
                     </ul>
                 </div>
           </li>
