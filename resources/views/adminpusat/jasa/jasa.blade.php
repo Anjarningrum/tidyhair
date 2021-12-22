@@ -49,7 +49,7 @@
                     <thead>
                     <tr>
                     <th width="5%">Id</th>
-                    <th>Nama Barang</th>
+                    <th>Nama Jasa</th>
                     <th>Harga</th>
                     <th>Diskon</th>
                     <th>Branch</th>

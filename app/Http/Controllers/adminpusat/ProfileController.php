@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -23,13 +24,18 @@ class ProfileController extends Controller
     public function update($id, Request $req){
         $user = User::findOrFail($id);
 
-        $user->name = $req->name;
-        $user->email = $req->email;
-        $user->password = Hash::make($req->password);
-        $user->alamat = $req->alamat;
-        $user->no_telepon = $req->no_telepon;
-
-        $user->save();
+        if($req->file('image')){
+            Storage::delete('public/'.$user->photo);
+            $file = $req->file('image')->store('imagepusat', 'public');
+            $user->photo = $file;
+        }
+            $user->name = $req->name;
+            $user->email = $req->email;
+            $user->password = Hash::make($req->password);
+            $user->alamat = $req->alamat;
+            $user->no_telepon = $req->no_telepon;
+            
+            $user->save();
 
         return redirect()->route('adminpusat.profile');
 

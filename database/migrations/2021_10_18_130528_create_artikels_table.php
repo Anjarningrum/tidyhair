@@ -17,7 +17,7 @@ class CreateArtikelsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('admin_id');
             $table->string('judul');
-            $table->string('isi');
+            $table->text('isi');
             $table->string('slug');
             $table->string('image')->nullable();
             $table->timestamps();

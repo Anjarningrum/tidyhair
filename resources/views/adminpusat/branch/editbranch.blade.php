@@ -17,7 +17,7 @@
         <div class="col-xs col-md-3">
             <img src="{{ asset('storage/'.$user->photo) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
         </div>
-        <form method="POST" class="col" action="{{ route('adminpusat.branch.update',['id' => $user->id]) }}">
+        <form method="POST" class="col" action="{{ route('adminpusat.branch.update',['id' => $user->id]) }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group row">
                 <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Name :') }}</label>

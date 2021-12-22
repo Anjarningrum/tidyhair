@@ -21,6 +21,13 @@ Auth::routes();
 Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat', [App\Http\Controllers\adminpusat\HomeController::class, 'index'])->name('adminpusat.index');
 
+    Route::get('adminpusat/getcustomer', [App\Http\Controllers\adminpusat\HomeController::class, 'getcustomer'])->name('adminpusat.getcustomer');
+    Route::get('adminpusat/getbranch', [App\Http\Controllers\adminpusat\HomeController::class, 'getbranch'])->name('adminpusat.getbranch');
+    Route::get('adminpusat/getbarber', [App\Http\Controllers\adminpusat\HomeController::class, 'getbarber'])->name('adminpusat.getbarber');
+    Route::get('adminpusat/getproduk', [App\Http\Controllers\adminpusat\HomeController::class, 'getproduk'])->name('adminpusat.getproduk');
+    Route::get('adminpusat/getartikel', [App\Http\Controllers\adminpusat\HomeController::class, 'getartikel'])->name('adminpusat.getartikel');
+    Route::get('adminpusat/gettransaksi', [App\Http\Controllers\adminpusat\HomeController::class, 'gettransaksi'])->name('adminpusat.gettransaksi');
+
     Route::get('adminpusat/profile', [App\Http\Controllers\adminpusat\ProfileController::class, 'getprofile'])->name('adminpusat.profile');
     Route::get('adminpusat/editprofile', [App\Http\Controllers\adminpusat\ProfileController::class, 'edit'])->name('adminpusat.profile.edit');
     Route::post('adminpusat/editprofile/{id}', [App\Http\Controllers\adminpusat\ProfileController::class, 'update'])->name('adminpusat.profile.update');
@@ -91,15 +98,24 @@ Route::group(['middleware' => ['role:adminpusat']], function (){
     Route::get('adminpusat/transaksijasa', [App\Http\Controllers\adminpusat\TransaksijasaController::class, 'gettransaksijasa'])->name('adminpusat.transaksijasa');
     Route::get('adminpusat/pembayaranjasa', [App\Http\Controllers\adminpusat\PembayaranjasaController::class, 'getpembayaranjasa'])->name('adminpusat.pembayaranjasa');
     Route::get('adminpusat/pembatalanjasa', [App\Http\Controllers\adminpusat\PembatalanjasaController::class, 'getpembatalanjasa'])->name('adminpusat.pembatalanjasa');
-
+    
     Route::get('adminpusat/ulasanbarber', [App\Http\Controllers\adminpusat\UlasanbarberController::class, 'getulasanbarber'])->name('adminpusat.ulasanbarber');
     Route::get('adminpusat/ulasanbranch', [App\Http\Controllers\adminpusat\UlasanbranchController::class, 'getulasanbranch'])->name('adminpusat.ulasanbranch');
-
+    Route::get('adminpusat/pendapatanbarber', [App\Http\Controllers\adminpusat\PendapatanbarberController::class, 'getpendapatanbarber'])->name('adminpusat.pendapatanbarber');
+    Route::get('adminpusat/pendapatanbranch', [App\Http\Controllers\adminpusat\PendapatanbranchController::class, 'getpendapatanbranch'])->name('adminpusat.pendapatanbranch');
+    
 });
 
 
 Route::group(['middleware' => ['role:adminbranch']], function (){
     Route::get('adminbranch', [App\Http\Controllers\adminbranch\HomeController::class, 'index'])->name('adminbranch.index');
+
+    Route::get('adminbranch/getcustomer', [App\Http\Controllers\adminbranch\HomeController::class, 'getcustomer'])->name('adminbranch.getcustomer');
+    Route::get('adminbranch/getbranch', [App\Http\Controllers\adminbranch\HomeController::class, 'getbranch'])->name('adminbranch.getbranch');
+    Route::get('adminbranch/getbarber', [App\Http\Controllers\adminbranch\HomeController::class, 'getbarber'])->name('adminbranch.getbarber');
+    Route::get('adminbranch/getproduk', [App\Http\Controllers\adminbranch\HomeController::class, 'getproduk'])->name('adminbranch.getproduk');
+    Route::get('adminbranch/getartikel', [App\Http\Controllers\adminbranch\HomeController::class, 'getartikel'])->name('adminbranch.getartikel');
+    Route::get('adminbranch/gettransaksi', [App\Http\Controllers\adminbranch\HomeController::class, 'gettransaksi'])->name('adminbranch.gettransaksi');
 
     Route::get('adminbranch/profile', [App\Http\Controllers\adminbranch\ProfileController::class, 'getprofile'])->name('adminbranch.profile');
     Route::get('adminbranch/editprofile', [App\Http\Controllers\adminbranch\ProfileController::class, 'edit'])->name('adminbranch.profile.edit');

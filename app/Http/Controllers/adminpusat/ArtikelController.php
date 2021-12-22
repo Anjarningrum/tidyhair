@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArtikelController extends Controller
 {
@@ -25,6 +26,13 @@ class ArtikelController extends Controller
     public function update($id, Request $req){
         $user = Auth::user();
         $artikel = Artikel::findOrFail($id);
+
+        if($req->file('image')){
+            Storage::delete('public/'.$artikel->image);
+            $file = $req->file('image')->store('artikel', 'public');
+            $artikel->image = $file;
+        }
+
         $artikel->admin_id = $user->id;
         $artikel->judul = $req->judul;
         $artikel->slug = $req->slug;

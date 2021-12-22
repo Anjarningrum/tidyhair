@@ -20,7 +20,6 @@ class JasaSeeder extends Seeder
             'harga' => '10000',
             'diskon' => '5'
         ]);
-        $jasa->users()->attach('3');
         $jasa->users()->attach('2');
 
         $jasa = Jasa::create([
@@ -29,7 +28,6 @@ class JasaSeeder extends Seeder
             'harga' => '50000',
             'diskon' => '5'
         ]);
-        $jasa->users()->attach('3');
         $jasa->users()->attach('2');
     
         $jasa = Jasa::create([
@@ -38,7 +36,6 @@ class JasaSeeder extends Seeder
             'harga' => '35000',
             'diskon' => '5'
         ]);
-        $jasa->users()->attach('3');
         $jasa->users()->attach('2');
     }
 }

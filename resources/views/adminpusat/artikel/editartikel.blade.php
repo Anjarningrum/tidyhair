@@ -21,7 +21,7 @@
         <div class="col-xs col-md-3">
             <img src="{{ asset('storage/'.$artikel->image) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
         </div>
-        <form method="POST" class="col" action="{{ route('adminpusat.artikel.update',['id' => $artikel->id]) }}">
+        <form method="POST" class="col" action="{{ route('adminpusat.artikel.update',['id' => $artikel->id]) }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
             <label for="judul" class="col-md-2 col-form-label text-md-right data py-0 my-2">{{ __('Judul :') }}</label>

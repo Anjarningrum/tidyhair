@@ -8,7 +8,7 @@
         <div class="col-xs col-md-3">
             <img src="{{ asset('storage/'.$barang->image) }}" style="vertical-align: middle;width: 100px;height: auto;border-radius: 50%;">
         </div>
-        <form method="POST" class="col" action="{{ route('adminpusat.barang.update',['id' => $barang->id]) }}">
+        <form method="POST" class="col" action="{{ route('adminpusat.barang.update',['id' => $barang->id]) }}" enctype="multipart/form-data">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right data py-0 my-2">{{ __('Nama :') }}</label>

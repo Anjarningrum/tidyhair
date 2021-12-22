@@ -22,8 +22,8 @@ class CreateCustomersTable extends Migration
             $table->string('alamat')->nullable();
             $table->string('no_telepon')->nullable();
             $table->string('photo')->nullable();
-            $table->double('longitude')->nullable();
-            $table->double('latitude')->nullable();
+            $table->decimal('longtitude', 15, 10)->nullable();
+            $table->decimal('latitude', 17, 12)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

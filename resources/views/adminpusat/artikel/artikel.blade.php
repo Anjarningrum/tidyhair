@@ -63,8 +63,8 @@
                         <td align="center">{{ $a->id }}</td>
                         <td>{{ $a->judul }}</td>
                         <td>{{ $a->slug }}</td>
-                        <td>{{ $a->isi }}</td>
-                        <td><img src="" alt="" class="img-fluid img-thumbnail" ></td>
+                        <td><p>{{ $a->isi }}</p></td>
+                        <td><img src="{{ asset('storage/'.$a->image) }}" alt="" class="img-fluid img-thumbnail" ></td>
                         <td align="center">
                             <div style="margin-bottom:5px;">
                                 <a href="{{ route('adminpusat.editartikel', ['id'=>$a->id]) }}" class="customBtnEdit">
