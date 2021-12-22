@@ -214,7 +214,7 @@
                         <span class="icn">
                         </span>
                     </div>
-                    <div class="col-md col-lg mt-1 text-dark">
+                    <div class="col-md col-lg mt-1 text-white">
                         {{ __('Logout') }}
                     </div>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
